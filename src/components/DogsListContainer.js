@@ -1,21 +1,11 @@
 import React, {Component} from 'react'
-import request from 'superagent'
 import DogsList from './DogsList'
 import { connect } from 'react-redux' 
 import { getList } from '../actions/getList' 
 
 export default class DogsListContainer extends Component {
-  state = { dogBreeds: null }
 
   componentDidMount() {
-    request
-      .get('https://dog.ceo/api/breeds/list/all')
-      .then(response => {
-        console.log(response)
-        const breeds = Object.keys(response.body.message)
-        this.updateBreeds(breeds)
-      })
-      .catch(console.error)
   }
 
   updateBreeds(breeds) {
