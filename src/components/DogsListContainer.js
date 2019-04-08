@@ -18,4 +18,4 @@ const mapStateToProps = state => ({
   dogBreeds: state.listReducer
 })
 
-export default connect(null, { getList })(DogsListContainer)
+export default connect(mapStateToProps, { getList })(DogsListContainer)
