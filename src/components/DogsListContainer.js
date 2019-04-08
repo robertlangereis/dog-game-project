@@ -9,6 +9,7 @@ export default class DogsListContainer extends Component {
     request
       .get('https://dog.ceo/api/breeds/list/all')
       .then(response => {
+        console.log(response)
         const breeds = Object.keys(response.body.message)
         this.updateBreeds(breeds)
       })
