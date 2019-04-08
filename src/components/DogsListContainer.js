@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import request from 'superagent'
 import DogsList from './DogsList'
-import { connect } from 'react-redux'
-import { getList } from '../actions/getList'
+import { connect } from 'react-redux' 
+import { getList } from '../actions/getList' 
 
 export default class DogsListContainer extends Component {
   state = { dogBreeds: null }
