@@ -14,4 +14,4 @@ class DogsListContainer extends Component {
   }
 }
 
-export default connect()(DogsListContainer)
+export default connect(null, { getList })(DogsListContainer)
