@@ -1,4 +1,4 @@
-import GET_LIST from './types'
+import { GET_LIST } from './types'
 import { request } from 'superagent'
 
 export const getList = () => dispatch => {
