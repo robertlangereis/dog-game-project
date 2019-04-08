@@ -6,7 +6,6 @@ export default class DogGameContainer extends Component {
     return (
       <div>
         <h1>Dog Game</h1>
-        <h1>Hello</h1>
         <Link to="/">Go back to the index</Link>
       </div>
     )
