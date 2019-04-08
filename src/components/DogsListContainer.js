@@ -10,7 +10,7 @@ class DogsListContainer extends Component {
   }
 
   render() {
-    return <DogsList dogBreeds={this.state.dogBreeds} />
+    return <DogsList dogBreeds={this.props.dogBreeds} />
   }
 }
 
