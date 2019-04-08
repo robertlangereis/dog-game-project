@@ -6,6 +6,7 @@ import { getList } from '../actions/getList'
 class DogsListContainer extends Component {
 
   componentDidMount() {
+    this.props.getList()
   }
 
   render() {
