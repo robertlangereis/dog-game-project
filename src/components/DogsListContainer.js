@@ -8,12 +8,6 @@ class DogsListContainer extends Component {
   componentDidMount() {
   }
 
-  updateBreeds(breeds) {
-    this.setState({
-      dogBreeds: breeds
-    })
-  }
-
   render() {
     return <DogsList dogBreeds={this.state.dogBreeds} />
   }
