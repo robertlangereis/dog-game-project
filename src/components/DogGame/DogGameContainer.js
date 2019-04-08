@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-export default class DogGame extends Component {
+export default class DogGameContainer extends Component {
   render() {
     return (
       <div>
