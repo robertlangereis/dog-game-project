@@ -3,7 +3,7 @@ import DogsList from './DogsList'
 import { connect } from 'react-redux' 
 import { getList } from '../actions/getList' 
 
-export default class DogsListContainer extends Component {
+class DogsListContainer extends Component {
 
   componentDidMount() {
   }
@@ -18,3 +18,5 @@ export default class DogsListContainer extends Component {
     return <DogsList dogBreeds={this.state.dogBreeds} />
   }
 }
+
+export default connect()(DogsListContainer)
