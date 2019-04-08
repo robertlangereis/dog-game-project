@@ -14,4 +14,8 @@ class DogsListContainer extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  dogBreeds: state.listReducer
+})
+
 export default connect(null, { getList })(DogsListContainer)
