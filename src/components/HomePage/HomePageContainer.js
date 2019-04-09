@@ -8,6 +8,9 @@ export default class HomePageContainer extends Component {
         <div>
           <Link to='/dog-list'>Link to the learning page</Link>
         </div>
+        <div>
+          <Link to='/dog-game'>Link to the game page</Link>
+        </div>
       </div>
     )
   }
