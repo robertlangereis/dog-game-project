@@ -10,8 +10,9 @@ export default class DogsList extends Component {
 
   render() {
     const { dogBreeds } = this.props
+    console.log('from DogsList.js:', this.dogBreeds)
     return (
-      <div className="dogs-list">
+      <div cclassName="dogs-list">
         <h1>Dogs List</h1>
 
         {!dogBreeds && 'Loading...'}
