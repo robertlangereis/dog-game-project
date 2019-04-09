@@ -20,10 +20,10 @@ class DogsListContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  if(!state) {return 'Loading...'}
-  else {
-  return { dogBreeds: state.dogBreeds }}
+  console.log(state)
+
+  return { dogBreeds: state.dogBreeds }
 }
 
-console.log('mapStateToProps:', mapStateToProps())
+console.log('mapStateToProps:',)
 export default connect(mapStateToProps, { getList })(DogsListContainer)
