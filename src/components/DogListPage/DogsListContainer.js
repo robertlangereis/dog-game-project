@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import DogsList from './DogsList'
 import { connect } from 'react-redux'
-import { getList } from '../actions/setList'
-
+import { getList } from '../../actions/setList'
+import { Link } from 'react-router-dom'
 
 class DogsListContainer extends Component {
   componentDidMount() {
@@ -10,7 +10,10 @@ class DogsListContainer extends Component {
   }
 
   render() {
-    return <DogsList dogBreeds={this.props.dogBreeds} />
+    return <div>
+      <Link to="/">Go back to the index</Link>
+      <DogsList dogBreeds={this.props.dogBreeds} />
+    </div>
   }
 }
 
