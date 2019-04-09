@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import request from 'superagent'
-import DogsList from './DogsList'
-import { connect } from 'react-redux'
-import { getList } from '../actions/setList'
-
 
 export default class DogsListContainer2 extends Component {
   state = { dogBreeds: null }
@@ -32,17 +28,3 @@ export default class DogsListContainer2 extends Component {
       {this.state.dogBreeds.map(item => <ul key="">{item}</ul>)}
     </div>
   }
-
-
-  // render() {
-  //   // console.log('in the render:', this.props.getList())
-  //   return <div className="dogs-list">
-  //     <h1>Dogs List</h1>
-  //     <li key={breed}>
-  //       <Link to={`/dog-breeds/${breed}`}>{breed}</Link>
-  //     </li>
-  //     <ul>{dogBreeds.map(answer => console.log(answer))}</ul>
-  //   </div>
-  //   // <DogsList dogBreeds={this.props.dogBreeds} />
-  // }
-}

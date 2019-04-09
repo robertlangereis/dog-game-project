@@ -1,5 +1,4 @@
 import { ADD_LIST, SET_LIST } from './types'
-import { request } from 'superagent';
 
 export const addList = (source, content) => {
   return {
@@ -26,29 +25,3 @@ export const getList = () => (dispatch) =>
       payload: response
     }))
     .catch (console.error)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const getList = () => (dispatch) =>
-//   request
-//     .get("https://dog.ceo/api/breeds/list/all")
-//     .then((response) => dispatch({
-//       type: SET_LIST,
-//       payload: response
-//     })
-//     )
-//     .then((response) => {
-//       return console.log(response.payload.message)
-//     })
-//     .catch(console.error)
