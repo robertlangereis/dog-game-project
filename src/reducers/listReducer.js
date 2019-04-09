@@ -6,7 +6,7 @@ export default function (state = null, action) {
       const data = action.payload.message
       const keys = Object.keys(data)
       return keys
-
+      
     default:
       return state
   }
