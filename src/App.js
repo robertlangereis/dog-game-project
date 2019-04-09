@@ -9,11 +9,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <main>
-      <Route exact path="/" component={DogsListContainer} />
-      <Route path="/dog-breeds/:breed" component={DogBreedImagesContainer} />
-      <Route path="/dog-game/" component={DogGameContainer} />
-      </main>
+        <main>
+          <Route exact path="/dog-list" component={DogsListContainer} />
+          <Route path="/dog-breeds/:breed" component={DogBreedImagesContainer} />
+          <Route path="/dog-game/" component={DogGameContainer} />
+        </main>
       </div>
     );
   }
