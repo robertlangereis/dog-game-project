@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
-// import reducer from './reducer'
+import randomImage from './gameReducer'
 import dogBreeds from './listReducer'
 
 export default combineReducers({
-    dogBreeds 
+    dogBreeds,
+    randomImage
 })
