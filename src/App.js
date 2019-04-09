@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import DogsListContainer from './components/DogsListContainer';
+import DogsListContainer from './components/DogListPage/DogsListContainer';
 import { Route } from 'react-router-dom'
 import DogBreedImagesContainer from './components/DogBreedImagesContainer'
 import DogGameContainer from './components/DogGame/DogGameContainer'
