@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import reducer from './reducer'
+// import reducer from './reducer'
+import dogBreeds from './listReducer'
 
 export default combineReducers({
-    reducer
-    
+    dogBreeds 
 })

@@ -16,7 +16,7 @@ export default function DogBreedImages(props) {
 
             <div>
                 {images && images.slice(0, 10).map(url => <img key={url} src={url} alt="Dog" />)}
-                {!images && 'Loading...'}
+                {/* {!images && 'Loading...'} */}
             </div>
         </div>
     )
