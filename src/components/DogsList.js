@@ -14,10 +14,10 @@ export default class DogsList extends Component {
       <div className="dogs-list">
         <h1>Dogs List</h1>
 
-        {/* { !dogBreeds && 'Loading...' } */}
+        { !dogBreeds && 'Loading...' }
 
         {
-          // dogBreeds &&
+          dogBreeds &&
           <ul>{ dogBreeds.map(
             answer => console.log(answer)) }</ul>
         }

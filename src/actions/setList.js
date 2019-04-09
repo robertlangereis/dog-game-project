@@ -24,12 +24,8 @@ export const getList = () => (dispatch) =>
     .then((response) => dispatch({
       type: SET_LIST,
       payload: response
-    })
-    )
-    .then((response) => {
-      return console.log('then response: ', response.payload.message)
-    })
-    .catch(console.error)
+    }))
+    .catch (console.error)
 
 
 

@@ -14,13 +14,15 @@ class DogsListContainer extends Component {
 
   render() {
     // console.log('in the render:', this.props.getList())
-    return <h1>Hi</h1>
-    // <DogsList dogBreeds={this.props.dogBreeds} />
+    // return <h1>Hi</h1>
+    return <DogsList dogBreeds={this.props.dogBreeds} />
   }
 }
 
 const mapStateToProps = state => {
-  return { dogBreeds: state.dogBreeds }
+  if(!state) {return 'Loading...'}
+  else {
+  return { dogBreeds: state.dogBreeds }}
 }
 
 console.log('mapStateToProps:', mapStateToProps())
