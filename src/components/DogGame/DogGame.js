@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './DogGame.css'
+import sample from '../../img/sample-image.jpg'
 
 export default class DogGame extends Component {
     renderButton = (type, content) => {
@@ -31,6 +32,13 @@ export default class DogGame extends Component {
                     </div>
 
                     <div class='answers'>
+                        <div class='winner-alt'>
+                            {!randomBreed && 'Loading...'}
+                            {randomBreed &&
+                                <div>
+                                    <button>{this.props.randomBreed}</button>
+                                </div>}
+                        </div>
                         <div class='random-alt'>
                             {!randomBreed && 'Loading...'}
                             {randomBreed &&
@@ -38,7 +46,6 @@ export default class DogGame extends Component {
                                     <button>{this.props.randomBreed}</button>
                                 </div>}
                         </div>
-
                         <div class='random-alt'>
                             {!randomBreed2 && 'Loading...'}
                             {randomBreed2 &&
