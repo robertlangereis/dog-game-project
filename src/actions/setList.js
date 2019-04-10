@@ -17,15 +17,13 @@ export const setList = (list) => {
   }
 }
 
-export const getList = () => (dispatch) =>
-  {
-    return fetch("https://dog.ceo/api/breeds/list/all")
-      .then((response) => response.json())
-      .then(response => { 
-        console.log('response test:', response)
-
-        dispatch({ type: SET_LIST, payload: response
-        })
+export const getList = () => (dispatch) => {
+  return fetch("https://dog.ceo/api/breeds/list/all")
+    .then((response) => response.json())
+    .then(response => {
+      dispatch({
+        type: SET_LIST, payload: response
       })
-      .catch(console.error);
-  }
+    })
+    .catch(console.error);
+}

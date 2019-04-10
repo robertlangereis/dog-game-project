@@ -7,7 +7,7 @@ import sample from '../../img/sample-image.jpg'
 export default class DogGame extends Component {
     renderButton = (type, key) => {
         const divClass = `${type}-alt`
-        return (<div class={divClass}>
+        return (<div className={divClass}>
             {!key && 'Loading...'}
             {key &&
                 <div>
@@ -27,11 +27,11 @@ export default class DogGame extends Component {
                 </header>
 
                 <main>
-                    <div class='winner-img'>
+                    <div className='winner-img'>
                         {!sample && 'Loading...'}
                         {sample && <img id='winner-img' src={sample} alt='RandomImage'></img>}
                     </div>
-                    <div class='answers'>
+                    <div className='answers'>
                         {this.renderButton('winner', 'Winner')}
                         {this.renderButton('random', randomBreed)}
                         {this.renderButton('random', randomBreed2)}
