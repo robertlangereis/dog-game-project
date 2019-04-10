@@ -14,10 +14,17 @@ body {
   border: 5px solid rgb(170, 188, 206);
 }
 
+.link {
+  display: inline;
+  vertical-align: bottom;
+}
+
 #home {
-  width: 100px;
+  height: 100px;
 }
 
 #list {
-  width: 100px;
+  position: relative;
+  height: 80px;
+  bottom: 10px; 
 }
