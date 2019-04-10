@@ -12,7 +12,7 @@ export default class DogsList extends Component {
     const { dogBreeds } = this.props
     console.log('from DogsList.js:', this.dogBreeds)
     return (
-      <div cclassName="dogs-list">
+      <div className="dogs-list">
         <h1>Dogs List</h1>
 
         {!dogBreeds && 'Loading...'}
