@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './DogBreedImages.css'
 import home from '../../../img/baum-haus.png'
+import list from '../../../img/happy-dog.png'
 
 
 export default (props) => {
@@ -12,9 +13,9 @@ export default (props) => {
 
             This page will show images of the {props.breed} breed.
 
-            <Link to="/"><img id='home' src={home} alt="home"/></Link>
+            <Link to="/"><img id="home" src={home} alt="home"/></Link>
 
-            <Link to="/dog-list">Go back to the list</Link>
+            <Link to="/dog-list"><img id="list" src={list} alt="list" /></Link>
 
             <div class='images'>
                 <div class='image'>
