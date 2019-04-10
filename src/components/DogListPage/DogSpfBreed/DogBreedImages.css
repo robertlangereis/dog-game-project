@@ -1,0 +1,30 @@
+body {
+  background-color: rgb(251, 240, 197);
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dog-image {
+  max-width: 400px;
+  margin: 10px;
+  border: 5px solid rgb(170, 188, 206);
+}
+
+.link {
+  display: inline;
+  vertical-align: bottom;
+}
+
+#home {
+  height: 100px;
+}
+
+#list {
+  position: relative;
+  height: 80px;
+  bottom: 10px; 
+}

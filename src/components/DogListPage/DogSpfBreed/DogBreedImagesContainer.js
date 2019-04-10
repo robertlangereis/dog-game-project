@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DogBreedImages from '../DogList/DogBreedImages'
 import { connect } from 'react-redux'
 import { getImages } from '../../../actions/imageActions'
+import './DogsBreedImagesContainer.css'
 
 class DogsBreedImagesContainer extends Component {
 
