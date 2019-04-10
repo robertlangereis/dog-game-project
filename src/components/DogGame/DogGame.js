@@ -36,7 +36,7 @@ export default class DogGame extends Component {
                             {!randomBreed && 'Loading...'}
                             {randomBreed &&
                                 <div>
-                                    <button>{this.props.randomBreed}</button>
+                                    <button>Winner</button>
                                 </div>}
                         </div>
                         <div class='random-alt'>
