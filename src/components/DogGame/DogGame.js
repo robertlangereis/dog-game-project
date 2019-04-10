@@ -14,9 +14,9 @@ export default class DogGame extends Component {
                 </header>
 
                 <main>
-                    <div>
+                    <div class='winner-img'>
                         {!randomImage && 'Loading...'}
-                        {randomImage && <img src={randomImage.message} alt='RandomImage'></img>}
+                        {randomImage && <img id='winner-img' src={randomImage.message} alt='RandomImage'></img>}
                     </div>
 
                     <div class='random-alt'>
