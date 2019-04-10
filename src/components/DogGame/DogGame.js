@@ -7,7 +7,8 @@ import DogWinnerContainer from './DogWinnerContainer'
 class DogGame extends Component {
 
 componentDidMount() {
-    this.props.setWinner()
+    const list = this.props.dogBreeds
+    this.props.setWinner(list)
     }
 
     render() {
@@ -24,9 +25,10 @@ componentDidMount() {
     )}
 }
 const mapStateToProps = state => {
-    console.log("container state",state)
+    console.log("DogGame.js state",state)
     return {
-      dogWinner: state.dogs.dogWinner
+      dogWinner: state.dogs.dogWinner,
+      dogBreeds: state.dogs.dogBreeds
     }
 }
 
