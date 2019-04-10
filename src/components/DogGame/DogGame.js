@@ -13,7 +13,7 @@ export default class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={ key === 'winner' ? rightAnswer:wrongAnswer}>{key}</button>
+                    <button onClick={ key === 'winner' ? rightAnswer : wrongAnswer}>{key}</button>
                 </div>}
         </div>)
     }

@@ -17,13 +17,15 @@ export const randomBreeds = (breeds) => {
 export const rightAnswer = () => {
     return {
         type: RIGHT_ANSWER,
-        payload: console.log('CORRECTO')
+        payload: alert('CORRECTO'),
+        
     }
 }
 
 export const wrongAnswer = () => {
     return {
         type: WRONG_ANSWER,
-        payload: console.log('NOT CORRECTO')
+        payload: alert('NOT CORRECTO'),
+
     }
 }
