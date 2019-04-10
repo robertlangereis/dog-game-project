@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import DogBreedImages from './DogBreedImages'
+import DogBreedImages from '../DogSpfBreed/DogBreedImages'
 import { connect } from 'react-redux'
-import { getImages } from '../actions/imageActions'
+import { getImages } from '../../../actions/imageActions'
 
 class DogsBreedImagesContainer extends Component {
 
