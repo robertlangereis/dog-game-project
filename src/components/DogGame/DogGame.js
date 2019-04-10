@@ -5,13 +5,13 @@ import home from '../../img/baum-haus.png'
 import sample from '../../img/sample-image.jpg'
 
 export default class DogGame extends Component {
-    renderButton = (type, content) => {
+    renderButton = (type, key) => {
         const divClass = `${type}-alt`
         return (<div class={divClass}>
-            {!content && 'Loading...'}
-            {content &&
+            {!key && 'Loading...'}
+            {key &&
                 <div>
-                    <button>{content}</button>
+                    <button>{key}</button>
                 </div>}
         </div>)
     }
@@ -31,29 +31,10 @@ export default class DogGame extends Component {
                         {!sample && 'Loading...'}
                         {sample && <img id='winner-img' src={sample} alt='RandomImage'></img>}
                     </div>
-
                     <div class='answers'>
-                        <div class='winner-alt'>
-                            {!randomBreed && 'Loading...'}
-                            {randomBreed &&
-                                <div>
-                                    <button>Winner</button>
-                                </div>}
-                        </div>
-                        <div class='random-alt'>
-                            {!randomBreed && 'Loading...'}
-                            {randomBreed &&
-                                <div>
-                                    <button>{this.props.randomBreed}</button>
-                                </div>}
-                        </div>
-                        <div class='random-alt'>
-                            {!randomBreed2 && 'Loading...'}
-                            {randomBreed2 &&
-                                <div>
-                                    <button>{this.props.randomBreed2}</button>
-                                </div>}
-                        </div>
+                        {this.renderButton('winner', 'Winner')}
+                        {this.renderButton('random', randomBreed)}
+                        {this.renderButton('random', randomBreed2)}
                     </div>
                 </main>
             </div>
