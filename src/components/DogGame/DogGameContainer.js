@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setImage } from '../../actions/gameOneActions'
 import DogGame from './DogGame'
+import './DogGameContainer.css'
 
 class DogGameContainer extends Component {
 
@@ -11,7 +12,7 @@ class DogGameContainer extends Component {
 
   render() {
     return (
-      <DogGame randomImage={this.props.randomImage}/>
+      <DogGame randomImage={this.props.randomImage} class='container'/>
     )
   }
 }
