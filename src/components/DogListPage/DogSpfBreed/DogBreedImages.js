@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './DogBreedImages.css'
 
 export default (props) => {
     const { images } = props
@@ -11,7 +12,7 @@ export default (props) => {
 
             <Link to="/">Go back to the index</Link>
             
-            <div>
+            <div class='images'>
                 {!images && 'Loading...'}
                 {images && images.slice(0, 10).map(url => <img key={url} src={url} alt="Dog" />)}
             </div>
