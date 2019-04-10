@@ -3,7 +3,16 @@ import { Link } from 'react-router-dom'
 import './DogGame.css'
 
 export default class DogGame extends Component {
-
+    renderButton = (type, content) => {
+        const divClass = `${type}-alt`
+        return (<div class={divClass}>
+            {!content && 'Loading...'}
+            {content &&
+                <div>
+                    <button>{this.props.content}</button>
+                </div>}
+        </div>)
+    }
 
     render() {
         const { randomImage, randomBreed, randomBreed2 } = this.props
