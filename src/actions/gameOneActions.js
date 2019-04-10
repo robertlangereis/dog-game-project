@@ -1,4 +1,4 @@
-import { RANDOM_IMAGE } from './types'
+import { RANDOM_IMAGE, RANDOM_BREEDS } from './types'
 
 export const randomImage = (image) => {
     return {
@@ -7,11 +7,9 @@ export const randomImage = (image) => {
     }
 }
 
-export const setImage = () => (dispatch) => {
-    fetch(`https://dog.ceo/api/breeds/image/random`)
-    .then((response) => response.json())
-    .then((response) => dispatch({
-      type: RANDOM_IMAGE,
-      payload: response
-    }))
+export const randomBreeds = (breeds) => {
+    return {
+        type: RANDOM_BREEDS,
+        payload: breeds
+    }
 }

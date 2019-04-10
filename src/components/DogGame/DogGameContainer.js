@@ -1,23 +1,36 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setImage } from '../../actions/gameOneActions'
+import { getImages } from '../../actions/imageActions'
+import { getList } from '../../actions/setList'
 import DogGame from './DogGame'
-import './DogGameContainer.css'
 
 class DogGameContainer extends Component {
 
   componentDidMount() {
-    this.props.setImage()
+    const breed = this.props.match.params.breed
+    this.props.getImages(breed)       
+    this.props.getList()
   }
 
   render() {
+   let test = this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1)
+   let test2 = this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1)
+    console.log('this.props.dogBreeds', test)
     return (
-      <DogGame randomImage={this.props.randomImage} class='container'/>
+      <DogGame
+        randomImage={this.props.dogImage}
+        class='container'
+        randomBreed={test}
+        randomBreed2={test2}
+      />  
     )
   }
 }
 const mapStateToProps = state => {
-  return { randomImage: state.randomImage}
+  return {
+    dogImage: state.dogImage,
+    dogBreeds: state.dogBreeds
+  }
 }
 
-export default connect(mapStateToProps, { setImage })(DogGameContainer)
+export default connect(mapStateToProps, { getImages, getList })(DogGameContainer)
