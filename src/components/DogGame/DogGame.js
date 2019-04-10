@@ -1,4 +1,4 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export default class DogGame extends Component {
@@ -10,20 +10,30 @@ export default class DogGame extends Component {
         return (
             <div className='dog-game'>
                 <h1>Dog Game</h1>
-        
-                {!randomImage && 'Loading...'}
-                {randomImage && <img src={randomImage.message} alt='RandomImage'></img>}
-                {!randomBreed && 'Loading...'}
-                {randomBreed &&
-        <div>
-            <button>{this.props.randomBreed}</button>
-        </div>}
-        {!randomBreed2 && 'Loading...'}
-                {randomBreed2 &&
-        <div>
-            <button>{this.props.randomBreed2}</button>
-        </div>}
-        <Link to= "/">Go back to Homepage</Link>
-        </div>
-    )}
+
+                <div>
+                    {!randomImage && 'Loading...'}
+                    {randomImage && <img src={randomImage.message} alt='RandomImage'></img>}
+                </div>
+
+                <div class='random-alt'>
+                    {!randomBreed && 'Loading...'}
+                    {randomBreed &&
+                        <div>
+                            <button>{this.props.randomBreed}</button>
+                        </div>}
+                </div>
+
+                <div class='random-alt'>
+                    {!randomBreed2 && 'Loading...'}
+                    {randomBreed2 &&
+                        <div>
+                            <button>{this.props.randomBreed2}</button>
+                        </div>}
+                </div>
+
+                <Link to="/">Go back to Homepage</Link>
+            </div>
+        )
+    }
 }
