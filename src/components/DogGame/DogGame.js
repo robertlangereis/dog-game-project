@@ -9,7 +9,9 @@ export default class DogGame extends Component {
 
         return (
             <div className='dog-game'>
-                <h1>Dog Game</h1>
+                <header>
+                    <h1> Dog Game</h1>
+                </header>
 
                 <div>
                     {!randomImage && 'Loading...'}
