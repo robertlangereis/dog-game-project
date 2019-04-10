@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './DogGame.css'
 
 export default class DogGame extends Component {
 
