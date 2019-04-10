@@ -11,6 +11,7 @@ export default class DogGame extends Component {
         return (
             <div className='dog-game'>
                 <header>
+                    <Link to="/">Go back to Homepage</Link>
                     <h1> Dog Game</h1>
                 </header>
 
@@ -20,23 +21,23 @@ export default class DogGame extends Component {
                         {randomImage && <img id='winner-img' src={randomImage.message} alt='RandomImage'></img>}
                     </div>
 
-                    <div class='random-alt'>
-                        {!randomBreed && 'Loading...'}
-                        {randomBreed &&
-                            <div>
-                                <button>{this.props.randomBreed}</button>
-                            </div>}
-                    </div>
+                    <div class='answers'>
+                        <div class='random-alt'>
+                            {!randomBreed && 'Loading...'}
+                            {randomBreed &&
+                                <div>
+                                    <button>{this.props.randomBreed}</button>
+                                </div>}
+                        </div>
 
-                    <div class='random-alt'>
-                        {!randomBreed2 && 'Loading...'}
-                        {randomBreed2 &&
-                            <div>
-                                <button>{this.props.randomBreed2}</button>
-                            </div>}
+                        <div class='random-alt'>
+                            {!randomBreed2 && 'Loading...'}
+                            {randomBreed2 &&
+                                <div>
+                                    <button>{this.props.randomBreed2}</button>
+                                </div>}
+                        </div>
                     </div>
-
-                    <Link to="/">Go back to Homepage</Link>
                 </main>
             </div>
         )
