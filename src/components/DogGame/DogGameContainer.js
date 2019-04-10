@@ -15,7 +15,6 @@ class DogGameContainer extends Component {
   render() {
    let test = this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1)
    let test2 = this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1)
-    console.log('this.props.dogBreeds', test)
     return (
       <DogGame
         randomImage={this.props.dogImage}

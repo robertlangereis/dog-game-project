@@ -5,9 +5,10 @@ import home from '../../img/baum-haus.png'
 import sample from '../../img/sample-image.jpg'
 
 export default class DogGame extends Component {
+
     renderButton = (type, key) => {
-        const divClass = `${type}-alt`
-        return (<div class={divClass}>
+        const divClass = `${type}-alt content`
+        return (<div className={divClass}>
             {!key && 'Loading...'}
             {key &&
                 <div>
@@ -18,6 +19,9 @@ export default class DogGame extends Component {
 
     render() {
         const { randomImage, randomBreed, randomBreed2 } = this.props
+        const array = ['winner', randomBreed, randomBreed2]
+        const newArray = array.sort((a, b) => 0.5 - Math.random())
+        console.log(newArray)
 
         return (
             <div className='dog-game'>
@@ -27,14 +31,14 @@ export default class DogGame extends Component {
                 </header>
 
                 <main>
-                    <div class='winner-img'>
+                    <div className='winner-img'>
                         {!sample && 'Loading...'}
                         {sample && <img id='winner-img' src={sample} alt='RandomImage'></img>}
                     </div>
-                    <div class='answers'>
-                        {this.renderButton('winner', 'Winner')}
-                        {this.renderButton('random', randomBreed)}
-                        {this.renderButton('random', randomBreed2)}
+                    <div className='answers'>
+                        {this.renderButton('winner', newArray[0])}
+                        {this.renderButton('winner', newArray[1])}
+                        {this.renderButton('winner', newArray[2])}
                     </div>
                 </main>
             </div>

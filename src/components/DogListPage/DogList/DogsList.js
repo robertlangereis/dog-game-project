@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './DogsList.css'
 
 export default class DogsList extends Component {
   renderDogBreed(breed) {
@@ -20,7 +21,7 @@ export default class DogsList extends Component {
         {
           dogBreeds &&
           <ul>{dogBreeds.map(answer =>
-            <li key={answer}>{this.renderDogBreed(answer)}</li>)}
+            <li key={answer} className="dog-links">{this.renderDogBreed(answer)}</li>)}
           </ul>
         }
 

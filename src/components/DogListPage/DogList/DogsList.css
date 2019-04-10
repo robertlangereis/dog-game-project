@@ -1,0 +1,28 @@
+/* .dog-links *{
+  display: flex;
+  flex-wrap: wrap;
+} */
+main, body, .App {
+  margin: 0 auto;
+  width: auto;
+}
+
+a {
+  color: seagreen;
+  text-transform: uppercase;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+ul {
+  height: 70vmin;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+ul * {
+  display: flex;
+  justify-content: center;
+}
