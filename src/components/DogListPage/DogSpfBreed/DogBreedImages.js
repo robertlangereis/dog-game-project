@@ -13,9 +13,11 @@ export default (props) => {
 
             This page will show images of the {props.breed} breed.
 
-            <Link to="/"><img id="home" src={home} alt="home"/></Link>
+            <div>
+                <Link to="/"><img id="home" src={home} alt="home" /></Link>
 
-            <Link to="/dog-list"><img id="list" src={list} alt="list" /></Link>
+                <Link to="/dog-list"><img id="list" src={list} alt="list" /></Link>
+            </div>
 
             <div class='images'>
                 <div class='image'>
