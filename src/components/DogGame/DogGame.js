@@ -13,28 +13,30 @@ export default class DogGame extends Component {
                     <h1> Dog Game</h1>
                 </header>
 
-                <div>
-                    {!randomImage && 'Loading...'}
-                    {randomImage && <img src={randomImage.message} alt='RandomImage'></img>}
-                </div>
+                <main>
+                    <div>
+                        {!randomImage && 'Loading...'}
+                        {randomImage && <img src={randomImage.message} alt='RandomImage'></img>}
+                    </div>
 
-                <div class='random-alt'>
-                    {!randomBreed && 'Loading...'}
-                    {randomBreed &&
-                        <div>
-                            <button>{this.props.randomBreed}</button>
-                        </div>}
-                </div>
+                    <div class='random-alt'>
+                        {!randomBreed && 'Loading...'}
+                        {randomBreed &&
+                            <div>
+                                <button>{this.props.randomBreed}</button>
+                            </div>}
+                    </div>
 
-                <div class='random-alt'>
-                    {!randomBreed2 && 'Loading...'}
-                    {randomBreed2 &&
-                        <div>
-                            <button>{this.props.randomBreed2}</button>
-                        </div>}
-                </div>
+                    <div class='random-alt'>
+                        {!randomBreed2 && 'Loading...'}
+                        {randomBreed2 &&
+                            <div>
+                                <button>{this.props.randomBreed2}</button>
+                            </div>}
+                    </div>
 
-                <Link to="/">Go back to Homepage</Link>
+                    <Link to="/">Go back to Homepage</Link>
+                </main>
             </div>
         )
     }
