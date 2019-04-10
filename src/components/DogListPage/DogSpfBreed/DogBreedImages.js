@@ -19,7 +19,7 @@ export default (props) => {
             <div class='images'>
                 <div class='image'>
                     {!images && 'Loading...'}
-                    {images && images.slice(0, 10).map(url => <img key={url} src={url} alt="Dog" />)}
+                    {images && images.slice(0, 10).map(url => <img class='dog-image' key={url} src={url} alt="Dog" />)}
                 </div>
             </div>
         </div>
