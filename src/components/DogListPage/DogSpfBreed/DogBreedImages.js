@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './DogBreedImages.css'
+import logo from '../../../img/baum-haus.png'
+
 
 export default (props) => {
     const { images } = props
@@ -10,7 +12,9 @@ export default (props) => {
 
             This page will show images of the {props.breed} breed.
 
-            <Link to="/">Go back to the index</Link>
+            <Link to="/" src={logo}>Go back to the index</Link>
+
+            <Link to="/dog-list">Go back to the list</Link>
 
             <div class='images'>
                 <div class='image'>
