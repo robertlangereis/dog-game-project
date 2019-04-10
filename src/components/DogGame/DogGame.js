@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './DogGame.css'
+import home from '../../img/baum-haus.png'
 import sample from '../../img/sample-image.jpg'
 
 export default class DogGame extends Component {
@@ -10,7 +11,7 @@ export default class DogGame extends Component {
             {!content && 'Loading...'}
             {content &&
                 <div>
-                    <button>{this.props.content}</button>
+                    <button>{content}</button>
                 </div>}
         </div>)
     }
@@ -21,7 +22,7 @@ export default class DogGame extends Component {
         return (
             <div className='dog-game'>
                 <header>
-                    <Link to="/">Go back to Homepage</Link>
+                    <Link to="/"><img id="home" src={home} alt="home" /></Link>
                     <h1> Dog Game</h1>
                 </header>
 

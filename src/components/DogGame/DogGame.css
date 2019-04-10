@@ -1,5 +1,13 @@
 * {
-  /* border: 0.5px solid black; */
+  border: 0.5px solid black;
+}
+
+#home {
+  display: inline-block;
+
+}
+h1 {
+  display: inline-block;
 }
 
 #winner-img {
