@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './DogGame.css'
 import home from '../../img/baum-haus.png'
 import sample from '../../img/sample-image.jpg'
+import {rightAnswer, wrongAnswer} from '../../actions/gameOneActions'
 
 export default class DogGame extends Component {
 
@@ -12,7 +13,7 @@ export default class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button>{key}</button>
+                    <button onClick={ key === 'winner' ? rightAnswer:wrongAnswer}>{key}</button>
                 </div>}
         </div>)
     }
