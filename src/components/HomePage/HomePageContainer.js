@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { getList } from '../../actions/setList'
 import './HomePageContainer.css'
 
-export default class HomePageContainer extends Component {
+class HomePageContainer extends Component {
+  componentDidMount() {
+    this.props.getList()
+  }
+
   render() {
     return (
       <div class='main'>
@@ -16,3 +22,5 @@ export default class HomePageContainer extends Component {
     )
   }
 }
+
+export default connect(null, { getList })(HomePageContainer)
