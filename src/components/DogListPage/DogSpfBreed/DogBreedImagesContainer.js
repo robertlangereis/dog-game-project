@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import DogBreedImages from '../DogList/DogBreedImages'
+import DogBreedImages from '../DogSpfBreed/DogBreedImages'
 import { connect } from 'react-redux'
 import { getImages } from '../../../actions/imageActions'
-import './DogsBreedImagesContainer.css'
 
 class DogsBreedImagesContainer extends Component {
 
@@ -17,7 +16,6 @@ class DogsBreedImagesContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log ("state of dogimage ", state.dogImage)
   return { dogImage: state.dogImage }
 }
 

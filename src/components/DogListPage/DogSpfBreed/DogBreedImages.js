@@ -20,6 +20,7 @@ export default (props) => {
 
             <div class='images'>
                 <div class='image'>
+                    {console.log(images)}
                     {!images && 'Loading...'}
                     {images && images.slice(0, 10).map(url => <img class='dog-image' key={url} src={url} alt="Dog" />)}
                 </div>
