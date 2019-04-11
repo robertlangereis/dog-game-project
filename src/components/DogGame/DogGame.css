@@ -6,16 +6,6 @@ header{
   height: 7em;
 }
 
-#home {
-  position: absolute;
-  left: 10px;
-}
-
-h1 {
-  display: block;
-  text-align: center;
-}
-
 .winner-img{
   text-align: center;
 }
@@ -35,7 +25,7 @@ h1 {
 button {
   color: white;
   font-weight: bold; 
-  background-color: rgb(44, 90, 150);
+  background-color: rgb(45, 90, 150);
   height: 5em;
   width: 15em;
   border-radius: 1em;
