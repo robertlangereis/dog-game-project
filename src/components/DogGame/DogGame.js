@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom'
 import './DogGame.css'
 import home from '../../img/baum-haus.png'
 import sample from '../../img/sample-image.jpg'
-import {rightAnswer, wrongAnswer} from '../../actions/gameOneActions'
+import {rightAnswer, wrongAnswer, nextQuestion} from '../../actions/gameOneActions'
 
 export default class DogGame extends Component {
+
+    nextIfRight = () => {
+        rightAnswer();
+        nextQuestion();
+    }
+
+    nextIfWrong = () => {
+        wrongAnswer();
+        nextQuestion()
+    }
 
     renderButton = (type, key) => {
         const divClass = `${type}-alt content`
@@ -13,7 +23,7 @@ export default class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={ key === 'winner' ? rightAnswer : wrongAnswer}>{key}</button>
+                    <button onClick={ key === 'winner' ? this.nextIfRight : this.nextIfWrong}>{key}</button>
                 </div>}
         </div>)
     }
