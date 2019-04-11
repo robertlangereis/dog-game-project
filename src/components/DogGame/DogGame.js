@@ -9,9 +9,12 @@ import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
 
 class DogGame extends Component {
-
-    state = {
-        isHidden: true}
+    constructor() {
+		super();
+		state =  {
+			shown: true,
+		};
+	}
 
     componentDidMount() {
         this.props.getList()
@@ -40,12 +43,16 @@ class DogGame extends Component {
         </div>)
     }
 
+    hint = () => {
+    const shuffled = this.props.dogWinner.split('').sort(function(){return 0.5-Math.random()}).join('').slice(0,3);
+    return {shuffled}
+    }
 
-    toggleHidden = () => {
-        this.setState({
-          isHidden: !this.state.isHidden
-        })
-      }
+    toggleHint() {
+		this.setState({
+			shown: !this.state.shown
+		});
+	}
     
     render() {
         const valuePair = this.props.dogWinnerImage
@@ -61,6 +68,15 @@ class DogGame extends Component {
 
         // Randomise the buttons order
         const newArray = [dogWinner, test, test2].sort((a, b) => 0.5 - Math.random())
+
+
+        const shown = {
+			display: this.state.shown ? "block" : "none"
+		};
+		
+		const hidden = {
+			display: this.state.shown ? "none" : "block"
+		}
 
         return (
             <div className='dog-game'>
@@ -83,24 +99,14 @@ class DogGame extends Component {
                         {this.renderButton('button', newArray[0])}
                         {this.renderButton('button', newArray[1])}
                         {this.renderButton('button', newArray[2])}
-                        <h3>{this.newHintArray}</h3>
-                        <button onClick={this.toggleHidden}>HINT</button>
-                        <div>{!this.state.isHidden && <Child/>}</div>
+                        <h3 style={ hidden }>{this.hint}</h3>
+                        <button onClick={this.toggleHint}> HINT </button>
                     </div>
                 </main>
             </div>
         )
     }
 }
-
-class Child extends Component {
-    render() {
-        const shuffled = this.props.dogWinner.split('').sort(function(){return 0.5-Math.random()}).join('').slice(0,1);
-        const newHintArray = []
-      return (
-          (<div>{newHintArray.push(shuffled)}</div>)
-      )}
-  }
 
 const mapStateToProps = state => {
     console.log('DogGame state:', state)
@@ -111,4 +117,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList })(DogGame, Child)
+export default connect(mapStateToProps, { getWinner, getList })(DogGame)
