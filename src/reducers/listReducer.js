@@ -1,7 +1,6 @@
 import { SET_LIST, SET_WINNER} from '../actions/types'
 
-export default function (state = {}, action) {
-  console.log('action test:', action)
+export default function (state = [], action) {
   switch (action.type) {
     case SET_LIST:
       const data = action.payload.message

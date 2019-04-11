@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getImages } from '../../actions/imageActions'
 import DogGame from './DogGame'
-import './DogGameContainer.css'
 
 class DogGameContainer extends Component {
 
@@ -11,8 +10,16 @@ class DogGameContainer extends Component {
   }
 
   render() {
+   let test = this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1)
+   let test2 = this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1)
+  //  const dogWinnerImage = this.props.dogWinnerImage[1]
     return (
-      <div><DogGame dogWinnerImage={this.props.dogImage[1]} class='container'/></div>
+      <DogGame
+        dogWinnerImage={this.props.dogImage[1]}
+        class='container'
+        randomBreed={test}
+        randomBreed2={test2}
+      />  
     )
   }
 }

@@ -1,0 +1,46 @@
+/* * {
+  border: 0.5px solid black;
+} */
+
+header{
+  height: 7em;
+}
+
+#home {
+  position: absolute;
+  left: 10px;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+}
+
+.winner-img{
+  text-align: center;
+}
+
+#winner-img {
+  height: 500px;
+  border: 2px solid azure;
+  border-radius: 15px;
+}
+
+.answers {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+}
+
+button {
+  color: white;
+  font-weight: bold; 
+  background-color: rgb(44, 90, 150);
+  height: 5em;
+  width: 15em;
+  border-radius: 1em;
+}
+
+.answers * {
+  text-transform: uppercase;
+}

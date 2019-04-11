@@ -1,5 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './DogBreedImages.css'
+import home from '../../../img/baum-haus.png'
+import list from '../../../img/happy-dog.png'
+
 
 export default (props) => {
     const { images } = props
@@ -9,11 +13,17 @@ export default (props) => {
 
             This page will show images of the {props.breed} breed.
 
-            <Link to="/">Go back to the index</Link>
-            
-            <div>
-                {!images && 'Loading...'}
-                {images && images.slice(0, 10).map(url => <img key={url} src={url} alt="Dog" />)}
+            <div class="navigation">
+                <Link to="/dog-list" class="link"><img id="list" src={list} alt="list" /></Link>
+                <Link to="/" class="link"><img id="home" src={home} alt="home" /></Link>
+            </div>
+
+            <div class='images'>
+                <div class='image'>
+                    {console.log(images)}
+                    {!images && 'Loading...'}
+                    {images && images.slice(0, 10).map(url => <img class='dog-image' key={url} src={url} alt="Dog" />)}
+                </div>
             </div>
         </div>
     )
