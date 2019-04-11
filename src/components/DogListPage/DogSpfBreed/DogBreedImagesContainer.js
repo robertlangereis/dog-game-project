@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import DogBreedImages from '../DogSpfBreed/DogBreedImages'
 import { connect } from 'react-redux'
-import { getWinner } from '../../../actions/imageActions'
+import { getWinner, getImages } from '../../../actions/imageActions'
 
 class DogsBreedImagesContainer extends Component {
 
   componentDidMount() {
-    console.log('DogBreedImagesContainer componentDidMount test!')
     const breed = this.props.match.params.breed
     this.props.getWinner(breed)
+    this.props.getImages(breed)
   }
 
   render() {
@@ -20,4 +20,4 @@ const mapStateToProps = state => {
   return { dogImage: state.dogImage }
 }
 
-export default connect(mapStateToProps, { getWinner })(DogsBreedImagesContainer)
+export default connect(mapStateToProps, { getWinner, getImages })(DogsBreedImagesContainer)
