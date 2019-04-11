@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './DogsList.css'
+import home from '../../../img/baum-haus.png'
+import list from '../../../img/happy-dog.png'
 
 export default class DogsList extends Component {
   renderDogBreed(breed) {
@@ -11,10 +13,13 @@ export default class DogsList extends Component {
 
   render() {
     const { dogBreeds } = this.props
-    console.log('from DogsList.js:', this.dogBreeds)
     return (
       <div className="dogs-list">
-        <h1>Dogs List</h1>
+        <div className="navigation">
+          <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
+          <h1>Dogs List</h1>
+          <Link to="/" className="link"><img id="home" src={home} alt="home" /></Link>
+        </div>
 
         {!dogBreeds && 'Loading...'}
 

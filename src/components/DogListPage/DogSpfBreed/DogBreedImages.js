@@ -9,10 +9,9 @@ export default (props) => {
     const { images } = props
     return (
         <div className="dog-breed-images">
-
             <div className="navigation">
-                <h1>{props.breed} Images</h1>
                 <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
+                <h1>{props.breed} Images</h1>
                 <Link to="/" className="link"><img id="home" src={home} alt="home" /></Link>
             </div>
 

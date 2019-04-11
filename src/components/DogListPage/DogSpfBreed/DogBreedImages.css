@@ -1,3 +1,14 @@
+header{
+  height: 7em;
+}
+
+h1 {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
 .image {
   display: flex;
   flex-direction: column;
@@ -7,20 +18,23 @@
 .dog-image {
   max-width: 400px;
   margin: 10px;
-  border: 5px solid rgb(170, 188, 206);
+  border: 5px solid azure;
 }
 
-.link {
-  display: inline;
-  vertical-align: bottom;
+.navigation {
+  background-color: rgb(30, 79, 98);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 10%;
+  margin-bottom: 40px;
 }
 
 #home {
-  height: 100px;
+  height: 4em;
 }
 
 #list {
-  position: relative;
-  height: 80px;
-  bottom: 10px; 
+  margin-top: 0.5em;
+  height: 3em;
 }
