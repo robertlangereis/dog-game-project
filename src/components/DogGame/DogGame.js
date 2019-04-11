@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom'
 import './DogGame.css'
 import home from '../../img/baum-haus.png'
 import sample from '../../img/sample-image.jpg'
-import {rightAnswer, wrongAnswer} from '../../actions/gameOneActions'
+import {rightAnswer, wrongAnswer, nextQuestion} from '../../actions/gameOneActions'
 
 export default class DogGame extends Component {
+
+    nextIfRight = () => {
+        rightAnswer();
+        nextQuestion();
+    }
+
+    nextIfWrong = () => {
+        wrongAnswer();
+        nextQuestion()
+    }
 
     renderButton = (type, key) => {
         const divClass = `${type}-alt content`
@@ -13,13 +23,13 @@ export default class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={ key === 'winner' ? rightAnswer : wrongAnswer}>{key}</button>
+                    <button onClick={ key === 'winner' ? this.nextIfRight : this.nextIfWrong}>{key}</button>
                 </div>}
         </div>)
     }
 
     render() {
-        const { randomImage, randomBreed, randomBreed2 } = this.props
+        const {  randomBreed, randomBreed2 } = this.props
         const array = ['winner', randomBreed, randomBreed2]
         const newArray = array.sort((a, b) => 0.5 - Math.random())
         console.log(newArray)
@@ -37,9 +47,9 @@ export default class DogGame extends Component {
                         {sample && <img id='winner-img' src={sample} alt='RandomImage'></img>}
                     </div>
                     <div className='answers'>
-                        {this.renderButton('winner', newArray[0])}
-                        {this.renderButton('winner', newArray[1])}
-                        {this.renderButton('winner', newArray[2])}
+                        {this.renderButton('button', newArray[0])}
+                        {this.renderButton('button', newArray[1])}
+                        {this.renderButton('button', newArray[2])}
                     </div>
                 </main>
             </div>
