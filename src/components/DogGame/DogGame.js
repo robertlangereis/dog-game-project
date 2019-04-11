@@ -67,7 +67,7 @@ class DogGame extends Component {
 
                 <main>
                     <div className='winner-img'>
-                        <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />}
+                        <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />
                     </div>
                     <div className='answers'>
                         {this.renderButton('button', newArray[0])}
