@@ -11,6 +11,11 @@ import { connect } from 'react-redux'
 
 class DogGame extends Component {
 
+    componentDidMount() {
+        this.props.getList()
+        this.props.getWinner()
+      }
+
     nextIfRight = () => {
         rightAnswer();
         nextQuestion();
@@ -35,17 +40,15 @@ class DogGame extends Component {
     render() {
         const valuePair = this.props.dogWinnerImage
 
-        const { randomBreed, randomBreed2 } = this.props ? this.props : 'Loading...'
-
+        // const { randomBreed, randomBreed2 } = this.props ? this.props : 'Loading...'
+        const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
+        const test = this.props.dogBreeds ? this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
+        const test2 = this.props.dogBreeds ? this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
         
-        const { dogWinner } = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
-
-        console.log(dogWinner)
-        const array = [this.props.dogWinner, randomBreed, randomBreed2]
+        const array = [dogWinner, test, test2]
 
         const newArray = array.sort((a, b) => 0.5 - Math.random())
-        console.log(newArray)
         return (
             <div className='dog-game'>
                 <header
@@ -72,10 +75,11 @@ class DogGame extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('DogGame state:', state.dogs)
+    console.log('DogGame state:', state)
     return {
         dogWinnerImage: state.dogs,
+        dogBreeds: state.dogs.dogBreeds,
     }
 }
 
-export default connect(mapStateToProps, { getWinner })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList })(DogGame)
