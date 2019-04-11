@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-import DogBreedImagesContainer from './components/DogBreedImagesContainer'
+import DogBreedImagesContainer from './components/DogListPage/DogSpfBreed/DogBreedImagesContainer'
 import DogGameContainer from './components/DogGame/DogGameContainer'
-import DogsListContainer from './components/DogListPage/DogsListContainer'
+import DogsListContainer from './components/DogListPage/DogList/DogsListContainer'
 import HomePageContainer from './components/HomePage/HomePageContainer'
 
 class App extends Component {

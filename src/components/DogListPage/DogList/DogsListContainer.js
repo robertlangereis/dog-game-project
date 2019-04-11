@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import DogsList from './DogsList'
 import { connect } from 'react-redux'
-import { getList } from '../../actions/setList'
+import { getList } from '../../../actions/setList'
 import { Link } from 'react-router-dom'
 
 class DogsListContainer extends Component {
@@ -18,7 +18,9 @@ class DogsListContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return { dogBreeds: state.dogBreeds }
+  return { 
+    dogBreeds: state.dogBreeds,
+  }
 }
 
 export default connect(mapStateToProps, { getList })(DogsListContainer)

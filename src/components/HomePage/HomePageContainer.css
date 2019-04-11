@@ -1,0 +1,30 @@
+/* .main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(185, 110, 76, 0.726);
+  max-height: 60vmax;
+  margin: 15vmax 0 0 0;
+  padding: 30px;
+}
+
+.navegation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  height: 100px;
+  vertical-align: middle;
+  margin: 10px;
+  padding: 40px;
+  border: 3px solid rgb(83, 4, 4);
+  border-radius: 10px;
+  background-color: maroon;
+}
+
+.link {
+  color: rgb(188, 207, 197);
+  font-weight: bold;
+  font-size: 20px;
+} */
