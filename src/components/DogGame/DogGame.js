@@ -29,7 +29,7 @@ class DogGame extends Component {
                 <h1>Dog Game</h1>
                 {/* {!dogWinnerImage && 'Loading...'} */}
 
-                {<img src={this.props.dogImage[0]} alt='RandomImage1'></img>}
+                {<img src={this.props.dogImage[1]} alt='RandomImage1'></img>}
 
                 <Link to= "/">Go back to Homepage</Link>
             </div>
