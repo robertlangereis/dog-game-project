@@ -6,7 +6,7 @@ import list from '../../../img/happy-dog.png'
 
 
 export default (props) => {
-    const { images } = props
+    const { images } = props ? props : 'Loading...'
     return (
         <div className="dog-breed-images">
             <div className="navigation">
@@ -17,8 +17,7 @@ export default (props) => {
 
             <div className='images'>
                 <div className='image'>
-                    {!images && 'Loading...'}
-                    {images && images.slice(0, 10).map(url => <img className='dog-image' key={url} src={url} alt="Dog" />)}
+                    {images.slice(0, 10).map(url => <img className='dog-image' key={url} src={url} alt="Dog" />)}
                 </div>
             </div>
         </div>
