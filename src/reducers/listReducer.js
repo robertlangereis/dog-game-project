@@ -17,16 +17,25 @@ export default function (state = {}, action) {
       // const randomIndex = Math.floor(Math.random() * state.dogBreeds.length)
       // const dogWinner = state.dogBreeds[randomIndex]
       // const dogWinnerImage = `https://dog.ceo/api/breed/${encodeURIComponent(dogWinner)}/images`
-
-      const dogWinnerImage = () => {
+      const dogWinner = (dogBreeds) => {
         if (dogBreeds) {
           const randomIndex = Math.floor(Math.random() * state.dogBreeds.length)
-          const dogWinner = state.dogBreeds[randomIndex]
+          return state.dogBreeds[randomIndex]
+        } else {
+          console.log('No dogBreeds')
+          return 'Loading...'
+        }
+      }
+
+      const dogWinnerImage = () => {
+        if (dogWinner) {
           return `https://dog.ceo/api/breed/${encodeURIComponent(dogWinner)}/images`
         } else {
           return 'Loading...'
         }
       }
+
+      console.log('dogWinner from listReducer.js:', dogWinner())
 
       return {
         ...state,
