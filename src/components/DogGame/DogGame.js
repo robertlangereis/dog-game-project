@@ -10,25 +10,26 @@ class DogGame extends Component {
     componentDidMount() {
         console.log('DogGam this.props test:', this.props)
 
-        const { dogWinnerImage } = this.props
+        // const { dogWinnerImage } = this.props
 
-        console.log('componentDidMount dogWinnerImage test:', dogWinnerImage)
+        // console.log('componentDidMount dogWinnerImage test:', dogWinnerImage)
         const list = this.props.dogBreeds
         this.props.setWinner(list)
-        this.props.getImages(dogWinnerImage)
-        console.log('this props', this.props)
+        console.log('DOGWINNER GETIMAGE', this.props.dogWinnerImage)
+        this.props.getImages(this.props.dogWinner)
+        console.log('DOGWINNER BREED', this.props.dogWinner)
     }
 
     render() {
-        const { dogWinnerImage } = this.props.getImages
+        const { dogWinnerImage } = this.props.dogWinnerImage
         console.log("image url", dogWinnerImage)
 
         return (
             <div className='dog-game'>
                 <h1>Dog Game</h1>
-                {!dogWinnerImage && 'Loading...'}
+                {/* {!dogWinnerImage && 'Loading...'} */}
 
-                {dogWinnerImage && <img src={dogWinnerImage} alt='RandomImage1'></img>}
+                {<img src={this.props.dogWinnerImage} alt='RandomImage1'></img>}
 
                 <Link to= "/">Go back to Homepage</Link>
             </div>
@@ -39,13 +40,14 @@ const mapStateToProps = state => {
     console.log("DogGame.js state",state)
 
     const { dogWinnerImage } = state.dogs
-    console.log('mapStateToProps dogWinnerImage test:', dogWinnerImage)
+    console.log('mapStateToProps dogImage :', state.dogImage)
 
     return {
         dogBreeds: state.dogs.dogBreeds,
         dogWinnerImage,
-        // dogWinner: state.dogs.dogWinner,
-        getImages: state.getImages        
+        dogWinner: state.dogs.dogWinner,
+        getImages: state.getImages,  
+        dogImage: state.dogImage      
     }
 }
 
