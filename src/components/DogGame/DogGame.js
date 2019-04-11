@@ -9,12 +9,12 @@ export default class DogGame extends Component {
 
     nextIfRight = () => {
         rightAnswer();
-        nextQuestion();
+        // nextQuestion();
     }
 
     nextIfWrong = () => {
         wrongAnswer();
-        nextQuestion()
+        // nextQuestion();
     }
 
     renderButton = (type, key) => {
@@ -23,15 +23,15 @@ export default class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={ key === 'winner' ? this.nextIfRight : this.nextIfWrong}>{key}</button>
+                    <button onClick={ key === this.props.dogWinner ? this.nextIfRight : this.nextIfWrong}>{key}</button>
                 </div>}
         </div>)
     }
 
     render() {
         const {  randomBreed, randomBreed2 } = this.props
-        const { dogWinnerImage } = this.props
-        const array = ['winner', randomBreed, randomBreed2]
+        const { dogWinnerImage, dogWinner } = this.props
+        const array = [dogWinner, randomBreed, randomBreed2]
         const newArray = array.sort((a, b) => 0.5 - Math.random())
         return (
             <div className='dog-game'>

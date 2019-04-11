@@ -11,12 +11,12 @@ class HomePageContainer extends Component {
 
   render() {
     return (
-      <div class='main'>
-        <div class='navegation'>
-          <Link to='/dog-list' class='link'>Link to the learning page</Link>
+      <div className='main'>
+        <div className='navegation'>
+          <Link to='/dog-list' className='link'>Link to the learning page</Link>
         </div>
-        <div class='navegation'>
-          <Link to='/dog-game' class='link'>Link to the game page</Link>
+        <div className='navegation'>
+          <Link to='/dog-game' className='link'>Link to the game page</Link>
         </div>
       </div>
     )

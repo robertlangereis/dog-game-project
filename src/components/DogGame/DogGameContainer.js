@@ -19,6 +19,7 @@ class DogGameContainer extends Component {
         class='container'
         randomBreed={test}
         randomBreed2={test2}
+        dogWinner={this.props.dogWinner}
       />  
     )
   }
