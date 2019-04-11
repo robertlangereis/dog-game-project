@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getImages } from '../../actions/imageActions'
-import { setList } from '../../actions/setList'
 import DogGame from './DogGame'
 
 class DogGameContainer extends Component {

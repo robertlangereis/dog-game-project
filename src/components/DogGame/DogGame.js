@@ -4,7 +4,7 @@ import './DogGame.css'
 import home from '../../img/baum-haus.png'
 import list from '../../img/happy-dog.png'
 import {rightAnswer, wrongAnswer, nextQuestion} from '../../actions/gameOneActions'
-import { setList, getList } from '../../actions/setList';
+import { getList } from '../../actions/setList';
 
 
 export default class DogGame extends Component {
