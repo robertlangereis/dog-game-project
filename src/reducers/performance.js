@@ -1,4 +1,4 @@
-import { SET_PERFORMANCE, CALC_PERFORMANCE } from '../actions/setPerformance'
+import { SET_PERFORMANCE, CALC_PERFORMANCE } from '../actions/types'
 
 export default function (state = null, action) {
   switch (action.type) {
