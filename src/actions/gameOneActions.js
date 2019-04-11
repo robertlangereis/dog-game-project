@@ -1,11 +1,4 @@
-import { RANDOM_IMAGE, RANDOM_BREEDS, RIGHT_ANSWER, WRONG_ANSWER, NEXT_QUESTION } from './types'
-
-export const randomImage = (image) => {
-    return {
-        type: RANDOM_IMAGE,
-        payload: image
-    }
-}
+import { RANDOM_BREEDS, RIGHT_ANSWER, WRONG_ANSWER, NEXT_QUESTION } from './types'
 
 export const randomBreeds = (breeds) => {
     return {

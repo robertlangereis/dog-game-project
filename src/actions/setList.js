@@ -1,14 +1,4 @@
-import { ADD_LIST, SET_LIST } from './types'
-
-export const addList = (source, content) => {
-  return {
-    type: ADD_LIST,
-    payload: {
-      source,
-      content
-    }
-  }
-}
+import { SET_LIST } from './types'
 
 export const setList = (list) => {
   return {

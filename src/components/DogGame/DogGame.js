@@ -29,7 +29,7 @@ export default class DogGame extends Component {
     }
 
     render() {
-        const { randomImage, randomBreed, randomBreed2 } = this.props
+        const {  randomBreed, randomBreed2 } = this.props
         const array = ['winner', randomBreed, randomBreed2]
         const newArray = array.sort((a, b) => 0.5 - Math.random())
         console.log(newArray)
@@ -47,9 +47,9 @@ export default class DogGame extends Component {
                         {sample && <img id='winner-img' src={sample} alt='RandomImage'></img>}
                     </div>
                     <div className='answers'>
-                        {this.renderButton('winner', newArray[0])}
-                        {this.renderButton('winner', newArray[1])}
-                        {this.renderButton('winner', newArray[2])}
+                        {this.renderButton('button', newArray[0])}
+                        {this.renderButton('button', newArray[1])}
+                        {this.renderButton('button', newArray[2])}
                     </div>
                 </main>
             </div>
