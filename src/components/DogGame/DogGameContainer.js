@@ -8,9 +8,7 @@ class DogGameContainer extends Component {
 
   componentDidMount() {
     // console.log('props',this.props)    
-    const winnerParams = !this.props.dogWinner && this.props.match.params.breed
-    this.props.getImages(winnerParams)
-  }
+    }
 
   render() {
     return (

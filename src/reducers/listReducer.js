@@ -16,12 +16,12 @@ export default function (state = {}, action) {
       // console.log('SET_WINNER state test:', state)
       const randomIndex = Math.floor(Math.random() * state.dogBreeds.length)
       const dogWinner = state.dogBreeds[randomIndex]
-      const dogWinnerImage = `https://dog.ceo/api/breed/${encodeURIComponent(dogWinner)}/images`
+      // const dogWinnerImage = `https://dog.ceo/api/breed/${encodeURIComponent(dogWinner)}/images`
       
       return {
         ...state,
         dogWinner,
-        dogWinnerImage
+        // dogWinnerImage
       }
 
     default:
