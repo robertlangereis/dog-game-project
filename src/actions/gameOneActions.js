@@ -17,7 +17,7 @@ export const rightAnswer = () => {
 export const wrongAnswer = (rightOne) => {
     return {
         type: WRONG_ANSWER,
-        payload: alert(`NOT CORRECTO, should be ${rightOne}`),
+        payload: alert(`NOT CORRECTO, should be ${rightOne.toUpperCase()}`),
 
     }
 }

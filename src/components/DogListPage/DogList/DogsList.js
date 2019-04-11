@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './DogsList.css'
 import home from '../../../img/baum-haus.png'
 import list from '../../../img/happy-dog.png'
 
