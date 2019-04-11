@@ -21,15 +21,15 @@ class DogGame extends Component {
     }
 
     render() {
-        const { dogWinnerImage } = this.props.dogWinnerImage
-        console.log("image url", dogWinnerImage)
+        // const { dogWinnerImage } = this.props.dogImage[1]
+        console.log("image url", this.props.dogImage[1])
 
         return (
             <div className='dog-game'>
                 <h1>Dog Game</h1>
                 {/* {!dogWinnerImage && 'Loading...'} */}
 
-                {<img src={this.props.dogWinnerImage} alt='RandomImage1'></img>}
+                {<img src={this.props.dogImage[0]} alt='RandomImage1'></img>}
 
                 <Link to= "/">Go back to Homepage</Link>
             </div>
@@ -40,7 +40,7 @@ const mapStateToProps = state => {
     console.log("DogGame.js state",state)
 
     const { dogWinnerImage } = state.dogs
-    console.log('mapStateToProps dogImage :', state.dogImage)
+    // console.log('mapStateToProps dogImage :', state.dogImage)
 
     return {
         dogBreeds: state.dogs.dogBreeds,
