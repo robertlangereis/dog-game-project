@@ -1,4 +1,4 @@
-export const TestNull = (element) => {
+export const TestNull = (element, JSXstatement) => {
   try {
     element.slice()
     return element
@@ -6,3 +6,5 @@ export const TestNull = (element) => {
     return TestNull
   }
 }
+
+t

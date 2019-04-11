@@ -9,6 +9,7 @@ a {
   font-family: Helvetica;
   font-size: 18px;
   font-weight: bold;
+
 }
 
 ul {
@@ -16,9 +17,15 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  padding: 1px;
 }
 
 ul * {
+  padding: 2px;
+}
+
+li {
   display: flex;
   justify-content: center;
+  flex-grow: 1;
 }
