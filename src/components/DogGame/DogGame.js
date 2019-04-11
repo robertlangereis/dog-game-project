@@ -10,6 +10,9 @@ import { connect } from 'react-redux'
 
 class DogGame extends Component {
 
+    state = {
+        isHidden: true}
+
     componentDidMount() {
         this.props.getList()
         this.props.getWinner()
@@ -37,6 +40,13 @@ class DogGame extends Component {
         </div>)
     }
 
+
+    toggleHidden = () => {
+        this.setState({
+          isHidden: !this.state.isHidden
+        })
+      }
+    
     render() {
         const valuePair = this.props.dogWinnerImage
         const dogBreeds = this.props.dogBreeds
@@ -73,6 +83,9 @@ class DogGame extends Component {
                         {this.renderButton('button', newArray[0])}
                         {this.renderButton('button', newArray[1])}
                         {this.renderButton('button', newArray[2])}
+                        <h3>{this.newHintArray}</h3>
+                        <button onClick={this.toggleHidden}>HINT</button>
+                        <div>{!this.state.isHidden && <Child/>}</div>
                     </div>
                 </main>
             </div>
@@ -80,12 +93,22 @@ class DogGame extends Component {
     }
 }
 
+class Child extends Component {
+    render() {
+        const shuffled = this.props.dogWinner.split('').sort(function(){return 0.5-Math.random()}).join('').slice(0,1);
+        const newHintArray = []
+      return (
+          (<div>{newHintArray.push(shuffled)}</div>)
+      )}
+  }
+
 const mapStateToProps = state => {
     console.log('DogGame state:', state)
     return {
         dogWinnerImage: state.dogs,
+        dogWinner: state.dogs.dogWinner,
         dogBreeds: state.dogs.dogBreeds,
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList })(DogGame, Child)
