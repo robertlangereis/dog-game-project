@@ -9,20 +9,16 @@ export default (props) => {
     const { images } = props
     return (
         <div className="dog-breed-images">
-            <h1>Dogs Breed Images</h1>
-
-            This page will show images of the {props.breed} breed.
-
-            <div class="navigation">
-                <Link to="/dog-list" class="link"><img id="list" src={list} alt="list" /></Link>
-                <Link to="/" class="link"><img id="home" src={home} alt="home" /></Link>
+            <div className="navigation">
+                <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
+                <h1>{props.breed} Images</h1>
+                <Link to="/" className="link"><img id="home" src={home} alt="home" /></Link>
             </div>
 
-            <div class='images'>
-                <div class='image'>
-                    {console.log(images)}
+            <div className='images'>
+                <div className='image'>
                     {!images && 'Loading...'}
-                    {images && images.slice(0, 10).map(url => <img class='dog-image' key={url} src={url} alt="Dog" />)}
+                    {images && images.slice(0, 10).map(url => <img className='dog-image' key={url} src={url} alt="Dog" />)}
                 </div>
             </div>
         </div>

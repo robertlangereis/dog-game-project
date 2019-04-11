@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './DogGame.css'
 import home from '../../img/baum-haus.png'
-import sample from '../../img/sample-image.jpg'
+import list from '../../img/happy-dog.png'
 import {rightAnswer, wrongAnswer, nextQuestion} from '../../actions/gameOneActions'
+import { setList, getList } from '../../actions/setList';
+
 
 export default class DogGame extends Component {
 
@@ -14,7 +16,7 @@ export default class DogGame extends Component {
 
     nextIfWrong = () => {
         wrongAnswer();
-        nextQuestion()
+        nextQuestion(getList())
     }
 
     renderButton = (type, key) => {
@@ -30,20 +32,22 @@ export default class DogGame extends Component {
 
     render() {
         const {  randomBreed, randomBreed2 } = this.props
+        const { dogWinnerImage } = this.props
         const array = ['winner', randomBreed, randomBreed2]
         const newArray = array.sort((a, b) => 0.5 - Math.random())
-
         return (
             <div className='dog-game'>
-                <header>
+                <header 
+                className="navigation">
+                    <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
+                    <h1> Dog Game </h1>
                     <Link to="/"><img id="home" src={home} alt="home" /></Link>
-                    <h1> Dog Game</h1>
                 </header>
 
                 <main>
                     <div className='winner-img'>
-                        {!sample && 'Loading...'}
-                        {sample && <img id='winner-img' src={sample} alt='RandomImage'></img>}
+                        {!dogWinnerImage && 'Loading...'}
+                        {dogWinnerImage && <img id='winner-img' src={dogWinnerImage} alt='RandomImage'></img>}
                     </div>
                     <div className='answers'>
                         {this.renderButton('button', newArray[0])}
