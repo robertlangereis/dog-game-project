@@ -22,7 +22,7 @@ class DogGame extends Component {
 
     render() {
         // const { dogWinnerImage } = this.props.dogImage[1]
-        console.log("image url", this.props.dogImage[1])
+        console.log("image url", this.props.dogImage)
 
         return (
             <div className='dog-game'>
