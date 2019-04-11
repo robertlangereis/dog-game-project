@@ -7,12 +7,13 @@ export const setImages = (images) => {
   }
 }
 
-export const getImages = (breed) => (dispatch) => 
-{   return fetch(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
+export const getImages = (breed) => (dispatch) => {
+  console.log('breed test:', breed)
+  return fetch(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
     .then((response) => response.json())
     .then((response) => dispatch({
       type: SET_IMAGES,
       payload: response
     }))
     .catch (console.error)
-  }
+}

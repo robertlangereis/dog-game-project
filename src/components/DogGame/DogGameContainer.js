@@ -8,22 +8,23 @@ class DogGameContainer extends Component {
 
   componentDidMount() {
     // console.log('props',this.props)    
-    const winnerParams = !this.props.dogWinner && this.props.dogWinner.match.params.breed
+    const winnerParams = !this.props.dogWinner && this.props.match.params.breed
     this.props.getImages(winnerParams)
   }
 
   render() {
     return (
-      <div><DogGame randomImage={this.props.randomImage} class='container'/></div>
+      <div><DogGame dogWinnerImage={this.props.dogWinnerImage} class='container'/></div>
       // ,<div><DogGameContainer/></div>
     )
   }
 }
 const mapStateToProps = state => {
-  console.log('state check DogGameContainer',state)
+  // console.log('state check DogGameContainer',state)
   return { 
     randomImage: state.randomImage,
-    dogWinner: state.dogs.dogWinner
+    dogWinner: state.dogs.dogWinner,
+    dogWinnerImage: state.dogs.dogWinnerImage
     }
 }
 

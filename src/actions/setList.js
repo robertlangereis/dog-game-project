@@ -15,17 +15,23 @@ export const setWinner = (list) => {
   }
 }
 
-export const getList = () => (dispatch) =>
-  {
-    return fetch("https://dog.ceo/api/breeds/list/all")
-      .then((response) => response.json())
-      .then((response) => dispatch({
-        type: SET_LIST, 
-        payload: response
-      },{
-        type: SET_WINNER, 
-        payload: response
-      }
-      ))
-      .catch(console.error);
-  }
+export const getList = () => (dispatch) => {
+  return fetch("https://dog.ceo/api/breeds/list/all")
+    .then((response) => response.json())
+    .then((response) => {
+      // console.log('getList response test:', response)
+      dispatch(
+        {
+          type: SET_LIST, 
+          payload: response
+        }
+      )
+      dispatch(
+        {
+          type: SET_WINNER, 
+          payload: response
+        }
+      )
+    })
+    .catch(console.error);
+}
