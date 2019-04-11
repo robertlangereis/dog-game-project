@@ -22,8 +22,8 @@ class DogGame extends Component {
     }
 
     nextIfWrong = () => {
-        wrongAnswer();
-        nextQuestion(getList())
+        wrongAnswer(this.props.dogWinnerImage.dogWinner);
+        nextQuestion()
     }
 
     renderButton = (type, key) => {
@@ -32,15 +32,14 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={key === this.props.dogWinner ? this.nextIfRight : this.nextIfWrong}>{key}</button>
+                    <button onClick={key === this.props.dogWinnerImage.dogWinner
+                         ? this.nextIfRight : this.nextIfWrong}>{key}</button>
                 </div>}
         </div>)
     }
 
     render() {
         const valuePair = this.props.dogWinnerImage
-
-        // const { randomBreed, randomBreed2 } = this.props ? this.props : 'Loading...'
         const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
         const test = this.props.dogBreeds ? this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'

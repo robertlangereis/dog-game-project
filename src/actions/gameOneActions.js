@@ -14,16 +14,17 @@ export const rightAnswer = () => {
     }
 }
 
-export const wrongAnswer = () => {
+export const wrongAnswer = (rightOne) => {
     return {
         type: WRONG_ANSWER,
-        payload: alert('NOT CORRECTO should be winner '),
+        payload: alert(`NOT CORRECTO, should be ${rightOne}`),
 
     }
 }
 
 export const nextQuestion = () => {
     return {
-        type: NEXT_QUESTION
+        type: NEXT_QUESTION,
+        payload: window.location.reload()
     }
 }
