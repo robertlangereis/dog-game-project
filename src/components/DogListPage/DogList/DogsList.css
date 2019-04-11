@@ -2,10 +2,6 @@
   display: flex;
   flex-wrap: wrap;
 } */
-main, body, .App {
-  margin: 0 auto;
-  width: auto;
-}
 
 a {
   color: seagreen;
