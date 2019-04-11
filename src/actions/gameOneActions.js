@@ -24,7 +24,6 @@ export const wrongAnswer = () => {
 
 export const nextQuestion = () => {
     return {
-        type: NEXT_QUESTION,
-        payload:  window.location.reload()
+        type: NEXT_QUESTION
     }
 }

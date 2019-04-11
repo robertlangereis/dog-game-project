@@ -20,7 +20,7 @@ class DogWinnerContainer extends Component {
   }
 }
 const mapStateToProps = state => {
-  // console.log("container state",state)
+  console.log("container state",state)
   return {
     dogBreeds: state.dogs.dogBreeds,
     dogWinner: state.dogs.dogWinner,
