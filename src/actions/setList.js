@@ -19,7 +19,6 @@ export const getList = () => (dispatch) => {
   return fetch("https://dog.ceo/api/breeds/list/all")
     .then((response) => response.json())
     .then((response) => {
-      // console.log('getList response test:', response)
       dispatch(
         {
           type: SET_LIST, 

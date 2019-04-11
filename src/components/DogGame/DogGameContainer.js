@@ -7,22 +7,23 @@ import './DogGameContainer.css'
 class DogGameContainer extends Component {
 
   componentDidMount() {
-    // console.log('props',this.props)    
-    }
+    this.props.getImages(this.props.dogWinner)
+  }
 
   render() {
     return (
-      <div><DogGame dogWinnerImage={this.props.dogWinnerImage} class='container'/></div>
-      // ,<div><DogGameContainer/></div>
+      <div><DogGame dogWinnerImage={this.props.dogImage[1]} class='container'/></div>
     )
   }
 }
 const mapStateToProps = state => {
-  // console.log('state check DogGameContainer',state)
+  const { dogWinnerImage } = state.dogs
   return { 
-    randomImage: state.randomImage,
+    dogBreeds: state.dogs.dogBreeds,
+    dogWinnerImage,
     dogWinner: state.dogs.dogWinner,
-    dogWinnerImage: state.dogs.dogWinnerImage
+    getImages: state.getImages,  
+    dogImage: state.dogImage   
     }
 }
 
