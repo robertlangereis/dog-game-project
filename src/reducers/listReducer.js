@@ -1,4 +1,6 @@
-import { SET_LIST, SET_WINNER} from '../actions/types'
+import { SET_LIST, SET_WINNER } from '../actions/types'
+import { getWinnerImage } from '../actions/imageActions'
+
 
 export default function (state = [], action) {
   switch (action.type) {
@@ -9,16 +11,16 @@ export default function (state = [], action) {
         ...state,
         dogBreeds
       }
-      
+
     case SET_WINNER:
-      const randomIndex = Math.floor(Math.random() * state.dogBreeds.length)
-      const dogWinner = state.dogBreeds[randomIndex]
-      
+      const dogWinner = action.payload.dogWinner
+      const dogWinnerImage = action.payload.dogWinnerImage
       return {
         ...state,
         dogWinner,
+        dogWinnerImage
       }
-
+      
     default:
       return state
   }
