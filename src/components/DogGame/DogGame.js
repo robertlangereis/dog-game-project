@@ -23,7 +23,7 @@ class DogGame extends Component {
 
     nextIfWrong = () => {
         wrongAnswer();
-        nextQuestion(getList())
+        nextQuestion()
     }
 
     renderButton = (type, key) => {
