@@ -8,13 +8,12 @@ import { getList } from '../../actions/setList'
 import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
 
-
 class DogGame extends Component {
 
     componentDidMount() {
         this.props.getList()
         this.props.getWinner()
-      }
+    }
 
     nextIfRight = () => {
         rightAnswer();
@@ -39,29 +38,35 @@ class DogGame extends Component {
 
     render() {
         const valuePair = this.props.dogWinnerImage
+        const dogBreeds = this.props.dogBreeds
 
-        // const { randomBreed, randomBreed2 } = this.props ? this.props : 'Loading...'
+        // Dog Winner and Dog Winner Image
         const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
-        const test = this.props.dogBreeds ? this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
-        const test2 = this.props.dogBreeds ? this.props.dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
-        
-        const array = [dogWinner, test, test2]
 
-        const newArray = array.sort((a, b) => 0.5 - Math.random())
+        // Get two random dogs
+        const test = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
+        const test2 = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
+
+        // Randomise the buttons order
+        const newArray = [dogWinner, test, test2].sort((a, b) => 0.5 - Math.random())
+
         return (
             <div className='dog-game'>
                 <header
                     className="navigation">
-                    <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
+                    <Link to="/dog-list" className="link">
+                        <img id="list" src={list} alt="list" />
+                    </Link>
                     <h1> Dog Game </h1>
-                    <Link to="/"><img id="home" src={home} alt="home" /></Link>
+                    <Link to="/">
+                        <img id="home" src={home} alt="home" />
+                    </Link>
                 </header>
 
                 <main>
                     <div className='winner-img'>
-                        {!dogWinnerImage && 'Loading...'}
-                        {dogWinnerImage && <img id='winner-img' src={dogWinnerImage} alt='RandomImage'></img>}
+                        <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />}
                     </div>
                     <div className='answers'>
                         {this.renderButton('button', newArray[0])}
