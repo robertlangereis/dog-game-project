@@ -32,7 +32,6 @@ export default class DogGame extends Component {
         const {  randomBreed, randomBreed2 } = this.props
         const array = ['winner', randomBreed, randomBreed2]
         const newArray = array.sort((a, b) => 0.5 - Math.random())
-        console.log(newArray)
 
         return (
             <div className='dog-game'>
