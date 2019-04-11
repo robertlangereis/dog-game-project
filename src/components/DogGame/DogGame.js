@@ -22,7 +22,7 @@ class DogGame extends Component {
     }
 
     nextIfWrong = () => {
-        wrongAnswer();
+        wrongAnswer(this.props.dogWinnerImage.dogWinner);
         nextQuestion()
     }
 
@@ -32,7 +32,8 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={key === this.props.dogWinnerImage.dogWinner ? this.nextIfRight : this.nextIfWrong}>{key}</button>
+                    <button onClick={key === this.props.dogWinnerImage.dogWinner
+                         ? this.nextIfRight : this.nextIfWrong}>{key}</button>
                 </div>}
         </div>)
     }
