@@ -1,6 +1,4 @@
 import { SET_LIST, SET_WINNER } from '../actions/types'
-import { getWinnerImage } from '../actions/imageActions'
-
 
 export default function (state = [], action) {
   switch (action.type) {
