@@ -39,10 +39,10 @@ class DogGame extends Component {
 
         const dogWinnerImage = valuePair.dogWinnerImage
         
-        const { dogWinner } = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
+        const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
 
         console.log(dogWinner)
-        const array = [this.props.dogWinner, randomBreed, randomBreed2]
+        const array = [dogWinner, randomBreed, randomBreed2]
 
         const newArray = array.sort((a, b) => 0.5 - Math.random())
         console.log(newArray)
