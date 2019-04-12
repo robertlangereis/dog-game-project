@@ -60,8 +60,14 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
+<<<<<<< HEAD
+                    <button id="button-div" onClick={key === this.props.dogWinnerImage.dogWinner
+                        ? this.nextIfRight : this.nextIfWrong}
+                        onKeyUp={this.selectOption}>
+=======
                     <button onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}>
+>>>>>>> development
                         {key}
                     </button>
                 </div>}
@@ -116,7 +122,7 @@ class DogGame extends Component {
                             {this.renderButton('button', newArray[2])}
                             <h3 class='button-num'>3</h3>
                         </div>
-                        <button onClick={() => { document.getElementById("demo").style.color = "black" }}>HINT</button>
+                        <button id="button-hint" onClick={() => { document.getElementById("demo").style.color = "black" }}>HINT</button>
                     </div>
                     <div>
                         <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
