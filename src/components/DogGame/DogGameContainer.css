@@ -2,10 +2,6 @@
   display: flex;
 }
 
-main{
-  height: 1000px;
-}
-
 main.dog-name {
   display: flex;
   flex-direction: column;

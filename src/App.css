@@ -1,9 +1,9 @@
-html{
+html {
   min-height: 100%;
   position: relative;
 }
 
-body{
+body, main {
   margin: 0;
   width: 100%;
   height: 100%;
@@ -11,11 +11,66 @@ body{
 }
 
 .App, .main {
-  /* position:absolute; */
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  overflow:hidden;
-  z-index:-1;
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.height100 {
+  height: 100vmax
+}
+
+.links {
+  background-color: seagreen;
+  height: 20%;
+  margin: 15%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.link-home {
+  font-family: proxima-nova, sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+}
+
+a {
+  color: seagreen;
+  text-transform: uppercase;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+ul {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1px;
+}
+
+ul * {
+  width: 250px;
+  padding: 2px;
+  text-align: center;
+  margin: 2px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#performance-counter{
+  color: black;
 }

@@ -1,4 +1,4 @@
-import { RANDOM_BREEDS, RIGHT_ANSWER, WRONG_ANSWER, NEXT_QUESTION } from './types'
+import { RANDOM_BREEDS, RIGHT_ANSWER, WRONG_ANSWER} from './types'
 
 export const randomBreeds = (breeds) => {
     return {
@@ -17,14 +17,7 @@ export const rightAnswer = () => {
 export const wrongAnswer = (rightOne) => {
     return {
         type: WRONG_ANSWER,
-        payload: alert(`NOT CORRECTO, should be ${rightOne}`),
+        payload: alert(`NOT CORRECTO, should be ${rightOne.toUpperCase()}`),
 
-    }
-}
-
-export const nextQuestion = () => {
-    return {
-        type: NEXT_QUESTION,
-        payload: window.location.reload()
     }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './DogsList.css'
 import home from '../../../img/baum-haus.png'
 import list from '../../../img/happy-dog.png'
 
@@ -16,9 +15,9 @@ export default class DogsList extends Component {
     return (
       <div className="dogs-list">
         <div className="navigation">
-          <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
-          <h1>Dogs List</h1>
           <Link to="/" className="link"><img id="home" src={home} alt="home" /></Link>
+          <h1>Dogs List</h1>
+          <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
         </div>
 
         {!dogBreeds && 'Loading...'}
