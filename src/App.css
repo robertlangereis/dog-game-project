@@ -21,19 +21,18 @@ body, main {
 }
 
 .height100 {
-  height: 100vmax
+  max-height: 100%
 }
 
 .links {
   background-color: seagreen;
-  height: 20%;
-  margin: 15%;
+  height: 10em;
+  margin: 7%;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .link-home {
   font-family: proxima-nova, sans-serif;

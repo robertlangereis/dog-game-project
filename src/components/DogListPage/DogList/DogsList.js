@@ -19,9 +19,7 @@ export default class DogsList extends Component {
           <h1>Dogs List</h1>
           <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
         </div>
-
         {!dogBreeds && 'Loading...'}
-
         {
           dogBreeds &&
           <ul>{dogBreeds.map(answer =>
