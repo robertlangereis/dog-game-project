@@ -8,6 +8,7 @@ import { getList } from '../../actions/setList'
 import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
 import { setPerformance } from '../../actions/setPerformance';
+import { setPercentage } from '../../actions/setPercentage'
 
 class DogGame extends Component {
 
@@ -19,6 +20,7 @@ class DogGame extends Component {
     nextIfRight = () => {
         rightAnswer();
         this.props.setPerformance();
+        this.props.setPercentage()
         this.props.getList();
         this.props.getWinner();
     }
@@ -27,6 +29,7 @@ class DogGame extends Component {
         wrongAnswer(this.props.dogWinnerImage.dogWinner);
         this.props.getList();
         this.props.getWinner();
+        this.props.setPercentage();
     }
 
     selectOption = (event) => {
@@ -91,7 +94,8 @@ class DogGame extends Component {
                         {this.renderButton('button', newArray[2])}
                     </div>
                     <div>
-                    <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
+                    <h1 id='performance-counter'>
+                    CORRECTOS: {!this.props.percentage ? 0 : Math.floor(this.props.performance/this.props.percentage*100)}%</h1>
                 </div>
                 </main>
             </div>
@@ -103,8 +107,9 @@ const mapStateToProps = state => {
     return {
         dogWinnerImage: state.dogs,
         dogBreeds: state.dogs.dogBreeds,
-        performance: state.performance
+        performance: state.performance,
+        percentage: state.percentage
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList, setPerformance })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList, setPerformance, setPercentage })(DogGame)
