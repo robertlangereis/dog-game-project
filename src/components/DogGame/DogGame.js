@@ -69,11 +69,11 @@ class DogGame extends Component {
     render() {
         const valuePair = this.props.dogWinnerImage
         const dogBreeds = this.props.dogBreeds
+        
         // Dog Winner and Dog Winner Image
         const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
-        // const secondHint = dogWinner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,1)
-
+    
         // Get two random dogs
         const test = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
         const test2 = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
