@@ -46,14 +46,30 @@ class DogGame extends Component {
         }
     }
 
+    selectOption = (event) => {
+        if (event.keyCode === 49 || event.key === 97){
+            console.log('you pressed 1')
+            alert('you pressed one')
+        } else if (event.keyCode === 50 || event.keyCode === 98){
+            alert('you pressed two')
+        }
+    
+
+    }
+
+    
+
     renderButton = (type, key) => {
         const divClass = `${type}-alt content`
         return (<div className={divClass}>
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={key === this.props.dogWinnerImage.dogWinner
-                        ? this.nextIfRight : this.nextIfWrong}
+                    <button
+                        onClick={key === this.props.dogWinnerImage.dogWinner ?
+                            this.nextIfRight
+                            : this.nextIfWrong}
+
                         onKeyUp={this.selectOption}>
                         {key}
                     </button>
