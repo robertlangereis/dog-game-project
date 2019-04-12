@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+}
+
+main.dog-name {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  display: block;
+  margin: 20px;
+}
