@@ -37,8 +37,6 @@ class DogGame extends Component {
         } else if (event.keyCode === 50 || event.keyCode === 98) {
             alert('you pressed two')
         }
-
-
     }
 
     renderButton = (type, key) => {
@@ -106,4 +104,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList, setPerformance, nextQuestion })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList, setPerformance})(DogGame)
