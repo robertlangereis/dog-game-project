@@ -63,10 +63,12 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
+                
                     <button onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}>
                         {key}
                     </button>
+
                 </div>}
         </div>)
     }

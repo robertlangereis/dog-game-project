@@ -21,6 +21,7 @@ header{
   display: flex;
   justify-content: space-around;
   padding: 2em;
+  max-height: 60px;
 }
 
 .hint {
