@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import './DogGame.css'
 import home from '../../img/baum-haus.png'
 import list from '../../img/happy-dog.png'
-import { rightAnswer, wrongAnswer, nextQuestion } from '../../actions/gameOneActions'
+import { rightAnswer, wrongAnswer } from '../../actions/gameOneActions'
 import { getList } from '../../actions/setList'
 import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
+import { setPerformance } from '../../actions/setPerformance';
 
 class DogGame extends Component {
     
@@ -22,12 +23,24 @@ class DogGame extends Component {
 
     nextIfRight = () => {
         rightAnswer();
-        nextQuestion();
+        this.props.setPerformance();
+        this.props.getList();
+        this.props.getWinner();
     }
 
     nextIfWrong = () => {
         wrongAnswer(this.props.dogWinnerImage.dogWinner);
-        nextQuestion()
+        this.props.getList();
+        this.props.getWinner();
+    }
+
+    selectOption = (event) => {
+        if (event.keyCode === 49 || event.key === 97) {
+            console.log('you pressed 1')
+            alert('you pressed one')
+        } else if (event.keyCode === 50 || event.keyCode === 98) {
+            alert('you pressed two')
+        }
     }
 
     renderButton = (type, key) => {
@@ -36,16 +49,14 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button id={"breed "+key} onClick={key === this.props.dogWinnerImage.dogWinner
-                         ? this.nextIfRight : this.nextIfWrong}>{key}</button>
+                    <button onClick={key === this.props.dogWinnerImage.dogWinner
+                        ? this.nextIfRight : this.nextIfWrong}
+                        onKeyUp={this.selectOption}>
+                        {key}
+                    </button>
                 </div>}
         </div>)
     }
-
-    // getHint = () => {
-    // const winner = this.props.dogWinner
-    // const shuffled = winner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,2);
-    // }
     
     render() {
         const valuePair = this.props.dogWinnerImage
@@ -66,18 +77,18 @@ class DogGame extends Component {
             <div className='dog-game'>
                 <header
                     className="navigation">
-                    <Link to="/dog-list" className="link">
-                        <img id="list" src={list} alt="list" />
-                    </Link>
-                    <h1> Dog Game </h1>
                     <Link to="/">
                         <img id="home" src={home} alt="home" />
+                    </Link>
+                    <h1> Dog Game </h1>
+                    <Link to="/dog-list" className="link">
+                        <img id="list" src={list} alt="list" />
                     </Link>
                 </header>
 
                 <main>
                     <div className='winner-img'>
-                        <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />}
+                        <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />
                     </div>
                     <div className='hint'>
                     <h3 id="demo">{'Hint: it\'s not a '+test}</h3>
@@ -87,10 +98,10 @@ class DogGame extends Component {
                         {this.renderButton('button', newArray[1])}
                         {this.renderButton('button', newArray[2])}
                         <button onClick={() => { document.getElementById("demo").style.color = "black"}}>HINT</button>
-                        {/* <h3>{'Hint: '+this.state.hint}</h3> */}
-                        
-                        {/* <button onClick="toggle_visibility">HINT</button> */}
                     </div>
+                    <div>
+                    <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
+                </div>
                 </main>
             </div>
         )
@@ -98,12 +109,12 @@ class DogGame extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('DogGame state:', state)
     return {
         dogWinnerImage: state.dogs,
         dogWinner: state.dogs.dogWinner,
         dogBreeds: state.dogs.dogBreeds,
+        performance: state.performance
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList, setPerformance })(DogGame)

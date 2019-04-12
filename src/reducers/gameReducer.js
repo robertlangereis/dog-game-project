@@ -1,7 +1,7 @@
 import { SET_PERFORMANCE } from "../actions/types";
 
-const initialState = 0
-export default function (state = initialState, action) {
+
+export default function (state = 0, action) {
   switch (action.type) {
       case SET_PERFORMANCE:
         return state + 1

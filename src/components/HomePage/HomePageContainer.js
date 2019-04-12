@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getList } from '../../actions/setList'
-import './HomePageContainer.css'
 
 class HomePageContainer extends Component {
   componentDidMount() {
@@ -11,16 +10,16 @@ class HomePageContainer extends Component {
 
   render() {
     return (
-      <div>
-        <div class='navigation'>
+      <div className='height100'>
+        <div className='navigation'>
           <h1>Dog Learning APP</h1>
         </div>
-        <div>
-          <div class='links'>
-            <Link to='/dog-list' class='link'>Link to the learning page</Link>
+        <div className='height100'>
+          <div className='links'>
+            <Link to='/dog-list' className='link-home'>Dog Wiki</Link>
           </div>
-          <div class='links'>
-            <Link to='/dog-game' class='link'>Link to the game page</Link>
+          <div className='links'>
+            <Link to='/dog-game' className='link-home'>Dog Game</Link>
           </div>
         </div>
       </div>

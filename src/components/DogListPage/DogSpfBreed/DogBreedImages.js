@@ -10,9 +10,9 @@ export default (props) => {
     return (
         <div className="dog-breed-images">
             <div className="navigation">
-                <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
-                <h1>{props.breed} Images</h1>
                 <Link to="/" className="link"><img id="home" src={home} alt="home" /></Link>
+                <h1>{props.breed} Images</h1>
+                <Link to="/dog-list" className="link"><img id="list" src={list} alt="list" /></Link>
             </div>
 
             <div className='images'>
