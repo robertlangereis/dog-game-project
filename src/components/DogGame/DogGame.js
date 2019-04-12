@@ -63,7 +63,7 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                
+
                     <button onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}>
                         {key}
@@ -123,13 +123,13 @@ class DogGame extends Component {
                             {this.renderButton('button', newArray[2])}
                             <h3 className='button-num'>3</h3>
                         </div>
-                        <button id="button-hint" onClick={() => {
-                            document.getElementById("demo").style.color !== 'black' 
-                            ? document.getElementById("demo").style.color = 'black' 
-                            : document.getElementById("demo").style.color = 'white'
-                            }}>HINT</button>
                     </div>
                     <div>
+                        <button id="button-hint" onClick={() => {
+                            document.getElementById("demo").style.color !== 'black'
+                                ? document.getElementById("demo").style.color = 'black'
+                                : document.getElementById("demo").style.color = 'white'
+                        }}>HINT</button>
                         <h1 id='performance-counter'>CORRECTOS:  {!this.props.percentage ? 0 : Math.floor(this.props.performance / this.props.percentage * 100)}%</h1>
                     </div>
                 </main>
