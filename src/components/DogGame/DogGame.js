@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { setPerformance } from '../../actions/setPerformance';
 
 class DogGame extends Component {
-
+//local state required for the storing of the "hidden" link
     constructor(props) {
         super(props)
         this.state = { hint: "..." }
@@ -41,6 +41,7 @@ class DogGame extends Component {
         this.props.getWinner();
     }
 
+//the various keycode options for when a key is pressed, corresponding to the answers
     selectOption = (event) => {
         if (event.keyCode === 49 || event.keyCode === 97) {
             const key = this.locState[0]
@@ -54,6 +55,7 @@ class DogGame extends Component {
         }
     }
 
+//call for rendering the buttons for the answers: one winner, two random generated breeds
     renderButton = (type, key) => {
         const divClass = `${type}-alt content`
         return (<div className={divClass}>
@@ -99,9 +101,11 @@ class DogGame extends Component {
                         <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />
                     </div>
                     <div className='hint'>
+                    {/* hidden Hint showing underneath dog-image */}
                         <h3 id="demo">{'Hint: it\'s not a ' + test}</h3>
                     </div>
                     <div className='answers'>
+                    {/* div with the answers, with a call on the rendering of three buttons */}
                         <div>
                             {this.renderButton('button', newArray[0])}
                             <h3 class='button-num'>1</h3>
@@ -114,9 +118,11 @@ class DogGame extends Component {
                             {this.renderButton('button', newArray[2])}
                             <h3 class='button-num'>3</h3>
                         </div>
+                        {/* button for getting a hint*/}
                         <button id="button-hint" onClick={() => { document.getElementById("demo").style.color = "black" }}>HINT</button>
                     </div>
                     <div>
+                    {/*counter for the number of correct answers, converted to a percentage*/}
                         <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
                     </div>
                 </main>
