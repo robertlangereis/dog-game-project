@@ -7,17 +7,20 @@ import { rightAnswer, wrongAnswer, nextQuestion } from '../../actions/gameOneAct
 import { getList } from '../../actions/setList'
 import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
+import { setPerformance } from '../../actions/setPerformance';
 
 class DogGame extends Component {
 
     componentDidMount() {
         this.props.getList()
         this.props.getWinner()
+
     }
 
     nextIfRight = () => {
         rightAnswer();
         nextQuestion();
+        setPerformance();
     }
 
     nextIfWrong = () => {
@@ -81,11 +84,11 @@ class DogGame extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('DogGame state:', state)
     return {
         dogWinnerImage: state.dogs,
         dogBreeds: state.dogs.dogBreeds,
+        performance: state.performance
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList, setPerformance })(DogGame)
