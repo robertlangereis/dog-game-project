@@ -11,6 +11,11 @@ import { setPerformance } from '../../actions/setPerformance';
 import { setPercentage } from '../../actions/setPercentage'
 
 class DogGame extends Component {
+    constructor(props) {
+        super(props)
+        this.state = { hint: "..." }
+    }
+
     locState = []
 
     componentDidMount() {
@@ -65,7 +70,7 @@ class DogGame extends Component {
                 </div>}
         </div>)
     }
-    
+
     render() {
         const valuePair = this.props.dogWinnerImage
         const dogBreeds = this.props.dogBreeds
@@ -101,7 +106,7 @@ class DogGame extends Component {
                         <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />
                     </div>
                     <div className='hint'>
-                    <h3 id="demo">{'Hint: it\'s not a '+test}</h3>
+                        <h3 id="demo">{'Hint: it\'s not a ' + test}</h3>
                     </div>
                     <div className='answers'>
                         <div>
@@ -118,9 +123,9 @@ class DogGame extends Component {
                         </div>
                     </div>
                     <div>
-                    <h1 id='performance-counter'>
-                    CORRECTOS: {!this.props.percentage ? 0 : Math.floor(this.props.performance/this.props.percentage*100)}%</h1>
-                </div>
+                        <h1 id='performance-counter'>
+                            CORRECTOS: {!this.props.percentage ? 0 : Math.floor(this.props.performance / this.props.percentage * 100)}%</h1>
+                    </div>
                 </main>
             </div>
         )
