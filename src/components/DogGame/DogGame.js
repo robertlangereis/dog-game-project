@@ -9,6 +9,11 @@ import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
 
 class DogGame extends Component {
+    
+    constructor (props) {
+        super(props)
+        this.state = { hint: "..." }
+      }
 
     componentDidMount() {
         this.props.getList()
@@ -31,17 +36,16 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={key === this.props.dogWinnerImage.dogWinner
+                    <button id={"breed "+key} onClick={key === this.props.dogWinnerImage.dogWinner
                          ? this.nextIfRight : this.nextIfWrong}>{key}</button>
                 </div>}
         </div>)
     }
 
-    getHint = () => {
-    const winner = this.props.dogWinner
-    const shuffled = winner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,2);
-    console.log('shuffle',shuffled)
-    }
+    // getHint = () => {
+    // const winner = this.props.dogWinner
+    // const shuffled = winner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,2);
+    // }
     
     render() {
         const valuePair = this.props.dogWinnerImage
@@ -49,7 +53,7 @@ class DogGame extends Component {
         // Dog Winner and Dog Winner Image
         const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
-        // const shuffledHint = dogWinner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,2)
+        // const secondHint = dogWinner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,1)
 
         // Get two random dogs
         const test = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
@@ -75,12 +79,16 @@ class DogGame extends Component {
                     <div className='winner-img'>
                         <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />}
                     </div>
+                    <div className='hint'>
+                    <h3 id="demo">{'Hint: it\'s not a '+test}</h3>
+                    </div>
                     <div className='answers'>
                         {this.renderButton('button', newArray[0])}
                         {this.renderButton('button', newArray[1])}
                         {this.renderButton('button', newArray[2])}
-                        {/* <h3>{'Hint: '+shuffledHint}</h3> */}
-                        <h3>{'Hint 2: it\'s not a '+test}</h3>
+                        <button onClick={() => { document.getElementById("demo").style.color = "black"}}>HINT</button>
+                        {/* <h3>{'Hint: '+this.state.hint}</h3> */}
+                        
                         {/* <button onClick="toggle_visibility">HINT</button> */}
                     </div>
                 </main>
