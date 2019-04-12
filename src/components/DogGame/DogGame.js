@@ -8,6 +8,7 @@ import { getList } from '../../actions/setList'
 import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
 import { setPerformance } from '../../actions/setPerformance';
+import { setPercentage } from '../../actions/setPercentage'
 
 class DogGame extends Component {
     locState = []
@@ -18,13 +19,17 @@ class DogGame extends Component {
         document.addEventListener('keyup', this.selectOption)
     }
 
+<<<<<<< HEAD
     componentWillUnmount() {
         document.addEventListener('keyup', this.selectOption)
     }
 
+=======
+>>>>>>> development
     nextIfRight = () => {
         rightAnswer();
-        setPerformance();
+        this.props.setPerformance();
+        this.props.setPercentage()
         this.props.getList();
         this.props.getWinner();
     }
@@ -33,6 +38,7 @@ class DogGame extends Component {
         wrongAnswer(this.props.dogWinnerImage.dogWinner);
         this.props.getList();
         this.props.getWinner();
+        this.props.setPercentage();
     }
 
     selectOption = (event) => {
@@ -57,18 +63,19 @@ class DogGame extends Component {
                     <button onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}
                         onKeyUp={this.selectOption}>
-                        {key}</button>
+                        {key}
+                    </button>
                 </div>}
         </div>)
     }
-
+    
     render() {
         const valuePair = this.props.dogWinnerImage
         const dogBreeds = this.props.dogBreeds
-
         // Dog Winner and Dog Winner Image
         const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
+        // const secondHint = dogWinner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,1)
 
         // Get two random dogs
         const test = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
@@ -96,6 +103,9 @@ class DogGame extends Component {
                     <div className='winner-img'>
                         <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />
                     </div>
+                    <div className='hint'>
+                    <h3 id="demo">{'Hint: it\'s not a '+test}</h3>
+                    </div>
                     <div className='answers'>
                         <div>
                             {this.renderButton('button', newArray[0])}
@@ -110,6 +120,10 @@ class DogGame extends Component {
                             <h3 class='button-num'>3</h3>
                         </div>
                     </div>
+                    <div>
+                    <h1 id='performance-counter'>
+                    CORRECTOS: {!this.props.percentage ? 0 : Math.floor(this.props.performance/this.props.percentage*100)}%</h1>
+                </div>
                 </main>
             </div>
         )
@@ -119,9 +133,11 @@ class DogGame extends Component {
 const mapStateToProps = state => {
     return {
         dogWinnerImage: state.dogs,
+        dogWinner: state.dogs.dogWinner,
         dogBreeds: state.dogs.dogBreeds,
-        performance: state.performance
+        performance: state.performance,
+        percentage: state.percentage
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList, setPerformance })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList, setPerformance, setPercentage })(DogGame)
