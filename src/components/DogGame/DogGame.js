@@ -47,7 +47,7 @@ class DogGame extends Component {
                 <div>
                     <button onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}
-                        onKeyUp={this.selectOption}>>{key}</
+                        onKeyUp={this.selectOption}>{key}</
                     button>
                 </div>}
         </div>)
@@ -72,12 +72,12 @@ class DogGame extends Component {
             <div className='dog-game'>
                 <header
                     className="navigation">
-                    <Link to="/dog-list" className="link">
-                        <img id="list" src={list} alt="list" />
-                    </Link>
-                    <h1> Dog Game </h1>
                     <Link to="/">
                         <img id="home" src={home} alt="home" />
+                    </Link>
+                    <h1> Dog Game </h1>
+                    <Link to="/dog-list" className="link">
+                        <img id="list" src={list} alt="list" />
                     </Link>
                 </header>
 
@@ -104,4 +104,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList, setPerformance })(DogGame)
+export default connect(mapStateToProps, { getWinner, getList, setPerformance, nextQuestion })(DogGame)
