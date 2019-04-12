@@ -19,13 +19,10 @@ class DogGame extends Component {
         document.addEventListener('keyup', this.selectOption)
     }
 
-<<<<<<< HEAD
     componentWillUnmount() {
         document.addEventListener('keyup', this.selectOption)
     }
 
-=======
->>>>>>> development
     nextIfRight = () => {
         rightAnswer();
         this.props.setPerformance();
