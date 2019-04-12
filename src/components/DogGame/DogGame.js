@@ -16,10 +16,9 @@ class DogGame extends Component {
         this.props.getWinner()
     }
 
-
     nextIfRight = () => {
         rightAnswer();
-        setPerformance();
+        this.props.setPerformance();
         this.props.getList();
         this.props.getWinner();
     }
@@ -47,8 +46,7 @@ class DogGame extends Component {
                 <div>
                     <button onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}
-                        onKeyUp={this.selectOption}>{key}</
-                    button>
+                        onKeyUp={this.selectOption}>{key}</button>
                 </div>}
         </div>)
     }
@@ -90,6 +88,9 @@ class DogGame extends Component {
                         {this.renderButton('button', newArray[1])}
                         {this.renderButton('button', newArray[2])}
                     </div>
+                    <div>
+                    <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
+                </div>
                 </main>
             </div>
         )
