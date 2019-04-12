@@ -1,8 +1,8 @@
-import { SET_PERFORMANCE } from './types'
+import { SET_PERFORMANCE_RIGHT } from './types'
 
 export const setPerformance = () => {
   return {
-    type: SET_PERFORMANCE,
-    payload: '0'
+    type: SET_PERFORMANCE_RIGHT,
+    payload: 0
   }
 }

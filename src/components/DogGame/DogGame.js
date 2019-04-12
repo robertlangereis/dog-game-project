@@ -10,15 +10,22 @@ import { connect } from 'react-redux'
 import { setPerformance } from '../../actions/setPerformance';
 
 class DogGame extends Component {
-    
-    constructor (props) {
+
+    constructor(props) {
         super(props)
         this.state = { hint: "..." }
-      }
+    }
+
+    locState = []
 
     componentDidMount() {
         this.props.getList()
         this.props.getWinner()
+        document.addEventListener('keyup', this.selectOption)
+    }
+
+    componentWillUnmount() {
+        document.addEventListener('keyup', this.selectOption)
     }
 
     nextIfRight = () => {
@@ -35,11 +42,15 @@ class DogGame extends Component {
     }
 
     selectOption = (event) => {
-        if (event.keyCode === 49 || event.key === 97) {
-            console.log('you pressed 1')
-            alert('you pressed one')
+        if (event.keyCode === 49 || event.keyCode === 97) {
+            const key = this.locState[0]
+            key === this.props.dogWinnerImage.dogWinner ? this.nextIfRight() : this.nextIfWrong()
         } else if (event.keyCode === 50 || event.keyCode === 98) {
-            alert('you pressed two')
+            const key = this.locState[1]
+            key === this.props.dogWinnerImage.dogWinner ? this.nextIfRight() : this.nextIfWrong()
+        } else if (event.keyCode === 51 || event.keyCode === 99) {
+            const key = this.locState[2]
+            key === this.props.dogWinnerImage.dogWinner ? this.nextIfRight() : this.nextIfWrong()
         }
     }
 
@@ -49,15 +60,20 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
+<<<<<<< HEAD
                     <button id="button-div" onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}
                         onKeyUp={this.selectOption}>
+=======
+                    <button onClick={key === this.props.dogWinnerImage.dogWinner
+                        ? this.nextIfRight : this.nextIfWrong}>
+>>>>>>> development
                         {key}
                     </button>
                 </div>}
         </div>)
     }
-    
+
     render() {
         const valuePair = this.props.dogWinnerImage
         const dogBreeds = this.props.dogBreeds
@@ -91,17 +107,26 @@ class DogGame extends Component {
                         <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />
                     </div>
                     <div className='hint'>
-                    <h3 id="demo">{'Hint: it\'s not a '+test}</h3>
+                        <h3 id="demo">{'Hint: it\'s not a ' + test}</h3>
                     </div>
                     <div className='answers'>
-                        {this.renderButton('button', newArray[0])}
-                        {this.renderButton('button', newArray[1])}
-                        {this.renderButton('button', newArray[2])}
-                        <button id="button-hint" onClick={() => { document.getElementById("demo").style.color = "black"}}>HINT</button>
+                        <div>
+                            {this.renderButton('button', newArray[0])}
+                            <h3 class='button-num'>1</h3>
+                        </div>
+                        <div >
+                            {this.renderButton('button', newArray[1])}
+                            <h3 class='button-num'>2</h3>
+                        </div>
+                        <div>
+                            {this.renderButton('button', newArray[2])}
+                            <h3 class='button-num'>3</h3>
+                        </div>
+                        <button id="button-hint" onClick={() => { document.getElementById("demo").style.color = "black" }}>HINT</button>
                     </div>
                     <div>
-                    <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
-                </div>
+                        <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
+                    </div>
                 </main>
             </div>
         )
