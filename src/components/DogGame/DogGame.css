@@ -22,6 +22,12 @@ header{
   padding: 2em;
 }
 
+.hint {
+  display: flex;
+  justify-content: space-around;
+  height: 3em;
+}
+
 button {
   color: white;
   font-weight: bold; 
@@ -29,6 +35,14 @@ button {
   height: 5em;
   width: 15em;
   border-radius: 1em;
+}
+
+h3 {
+  color: white;
+  font-weight: bold; 
+  height: 2em;
+  width: 15em;
+  text-align: center
 }
 
 .answers * {

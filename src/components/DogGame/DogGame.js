@@ -10,6 +10,11 @@ import { connect } from 'react-redux'
 import { setPerformance } from '../../actions/setPerformance';
 
 class DogGame extends Component {
+    
+    constructor (props) {
+        super(props)
+        this.state = { hint: "..." }
+      }
 
     componentDidMount() {
         this.props.getList()
@@ -52,14 +57,14 @@ class DogGame extends Component {
                 </div>}
         </div>)
     }
-
+    
     render() {
         const valuePair = this.props.dogWinnerImage
         const dogBreeds = this.props.dogBreeds
-
         // Dog Winner and Dog Winner Image
         const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
+        // const secondHint = dogWinner.split('').sort(()=> {return 0.5-Math.random()}).join('').slice(0,1)
 
         // Get two random dogs
         const test = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
@@ -85,10 +90,14 @@ class DogGame extends Component {
                     <div className='winner-img'>
                         <img id='winner-img' src={dogWinnerImage} alt='RandomImage' />
                     </div>
+                    <div className='hint'>
+                    <h3 id="demo">{'Hint: it\'s not a '+test}</h3>
+                    </div>
                     <div className='answers'>
                         {this.renderButton('button', newArray[0])}
                         {this.renderButton('button', newArray[1])}
                         {this.renderButton('button', newArray[2])}
+                        <button onClick={() => { document.getElementById("demo").style.color = "black"}}>HINT</button>
                     </div>
                     <div>
                     <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
@@ -102,6 +111,7 @@ class DogGame extends Component {
 const mapStateToProps = state => {
     return {
         dogWinnerImage: state.dogs,
+        dogWinner: state.dogs.dogWinner,
         dogBreeds: state.dogs.dogBreeds,
         performance: state.performance
     }
