@@ -60,16 +60,8 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-<<<<<<< HEAD
                     <button id="button-div" onClick={key === this.props.dogWinnerImage.dogWinner
-                        ? this.nextIfRight : this.nextIfWrong}
-                        onKeyUp={this.selectOption}>
-=======
-                    <button onClick={key === this.props.dogWinnerImage.dogWinner
-                        ? this.nextIfRight : this.nextIfWrong}>
->>>>>>> development
-                        {key}
-                    </button>
+                        ? this.nextIfRight : this.nextIfWrong} onKeyUp={this.selectOption}>{key}</button>
                 </div>}
         </div>)
     }
