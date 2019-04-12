@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './DogGame.css'
 import home from '../../img/baum-haus.png'
 import list from '../../img/happy-dog.png'
-import { rightAnswer, wrongAnswer} from '../../actions/gameOneActions'
+import { rightAnswer, wrongAnswer } from '../../actions/gameOneActions'
 import { getList } from '../../actions/setList'
 import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
@@ -46,7 +46,9 @@ class DogGame extends Component {
                 <div>
                     <button onClick={key === this.props.dogWinnerImage.dogWinner
                         ? this.nextIfRight : this.nextIfWrong}
-                        onKeyUp={this.selectOption}>{key}</button>
+                        onKeyUp={this.selectOption}>
+                        {key}
+                    </button>
                 </div>}
         </div>)
     }
@@ -105,4 +107,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getWinner, getList, setPerformance})(DogGame)
+export default connect(mapStateToProps, { getWinner, getList, setPerformance })(DogGame)
