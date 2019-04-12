@@ -10,11 +10,11 @@ class HomePageContainer extends Component {
 
   render() {
     return (
-      <div class='height100'>
+      <div className='height100'>
         <div className='navigation'>
           <h1>Dog Learning APP</h1>
         </div>
-        <div class='height100'>
+        <div className='height100'>
           <div className='links'>
             <Link to='/dog-list' className='link-home'>Dog Wiki</Link>
           </div>

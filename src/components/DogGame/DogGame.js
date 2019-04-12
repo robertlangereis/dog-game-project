@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './DogGame.css'
 import home from '../../img/baum-haus.png'
 import list from '../../img/happy-dog.png'
-import { rightAnswer, wrongAnswer, nextQuestion } from '../../actions/gameOneActions'
+import { rightAnswer, wrongAnswer} from '../../actions/gameOneActions'
 import { getList } from '../../actions/setList'
 import { getWinner } from '../../actions/imageActions'
 import { connect } from 'react-redux'
@@ -14,18 +14,20 @@ class DogGame extends Component {
     componentDidMount() {
         this.props.getList()
         this.props.getWinner()
-
     }
+
 
     nextIfRight = () => {
         rightAnswer();
-        nextQuestion();
         setPerformance();
+        this.props.getList();
+        this.props.getWinner();
     }
 
     nextIfWrong = () => {
         wrongAnswer(this.props.dogWinnerImage.dogWinner);
-        nextQuestion()
+        this.props.getList();
+        this.props.getWinner();
     }
 
     selectOption = (event) => {
