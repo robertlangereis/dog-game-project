@@ -116,9 +116,9 @@ class DogGame extends Component {
                             {this.renderButton('button', newArray[2])}
                             <h3 class='button-num'>3</h3>
                         </div>
+                        <button onClick={() => { document.getElementById("demo").style.color = "black" }}>HINT</button>
                     </div>
                     <div>
-                        <button onClick={() => { document.getElementById("demo").style.color = "black" }}>HINT</button>
                         <h1 id='performance-counter'>CORRECTOS:{this.props.performance}</h1>
                     </div>
                 </main>
