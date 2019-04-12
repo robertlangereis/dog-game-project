@@ -11,16 +11,15 @@ import { setPerformance } from '../../actions/setPerformance';
 import { setPercentage } from '../../actions/setPercentage'
 
 class DogGame extends Component {
-    locState = []
+    
+    constructor (props) {
+        super(props)
+        this.state = { hint: "..." }
+      }
 
     componentDidMount() {
         this.props.getList()
         this.props.getWinner()
-        document.addEventListener('keyup', this.selectOption)
-    }
-
-    componentWillUnmount() {
-        document.addEventListener('keyup', this.selectOption)
     }
 
     nextIfRight = () => {
@@ -39,17 +38,26 @@ class DogGame extends Component {
     }
 
     selectOption = (event) => {
-        if (event.keyCode === 49 || event.keyCode === 97) {
-            const key = this.locState[0]
-            key === this.props.dogWinnerImage.dogWinner ? this.nextIfRight() : this.nextIfWrong()
+        if (event.keyCode === 49 || event.key === 97) {
+            console.log('you pressed 1')
+            alert('you pressed one')
         } else if (event.keyCode === 50 || event.keyCode === 98) {
-            const key = this.locState[1]
-            key === this.props.dogWinnerImage.dogWinner ? this.nextIfRight() : this.nextIfWrong()
-        } else if (event.keyCode === 51 || event.keyCode === 99) {
-            const key = this.locState[2]
-            key === this.props.dogWinnerImage.dogWinner ? this.nextIfRight() : this.nextIfWrong()
+            alert('you pressed two')
         }
     }
+
+    selectOption = (event) => {
+        if (event.keyCode === 49 || event.key === 97){
+            console.log('you pressed 1')
+            alert('you pressed one')
+        } else if (event.keyCode === 50 || event.keyCode === 98){
+            alert('you pressed two')
+        }
+    
+
+    }
+
+    
 
     renderButton = (type, key) => {
         const divClass = `${type}-alt content`
@@ -57,8 +65,11 @@ class DogGame extends Component {
             {!key && 'Loading...'}
             {key &&
                 <div>
-                    <button onClick={key === this.props.dogWinnerImage.dogWinner
-                        ? this.nextIfRight : this.nextIfWrong}
+                    <button
+                        onClick={key === this.props.dogWinnerImage.dogWinner ?
+                            this.nextIfRight
+                            : this.nextIfWrong}
+
                         onKeyUp={this.selectOption}>
                         {key}
                     </button>
@@ -73,15 +84,13 @@ class DogGame extends Component {
         // Dog Winner and Dog Winner Image
         const dogWinner = valuePair.dogWinner ? valuePair.dogWinner : 'Loading...'
         const dogWinnerImage = valuePair.dogWinnerImage
-    
+
         // Get two random dogs
         const test = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
         const test2 = dogBreeds ? dogBreeds.sort(() => .5 - Math.random()).slice(0, 1) : 'Loading...'
 
         // Randomise the buttons order
         const newArray = [dogWinner, test, test2].sort((a, b) => 0.5 - Math.random())
-
-        this.locState = newArray
 
         return (
             <div className='dog-game'>
@@ -104,18 +113,10 @@ class DogGame extends Component {
                     <h3 id="demo">{'Hint: it\'s not a '+test}</h3>
                     </div>
                     <div className='answers'>
-                        <div>
-                            {this.renderButton('button', newArray[0])}
-                            <h3 class='button-num'>1</h3>
-                        </div>
-                        <div>
-                            {this.renderButton('button', newArray[1])}
-                            <h3 class='button-num'>2</h3>
-                        </div>
-                        <div>
-                            {this.renderButton('button', newArray[2])}
-                            <h3 class='button-num'>3</h3>
-                        </div>
+                        {this.renderButton('button', newArray[0])}
+                        {this.renderButton('button', newArray[1])}
+                        {this.renderButton('button', newArray[2])}
+                        <button onClick={() => { document.getElementById("demo").style.color = "black"}}>HINT</button>
                     </div>
                     <div>
                     <h1 id='performance-counter'>
