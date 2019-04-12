@@ -27,7 +27,7 @@ body, main {
 .links {
   background-color: seagreen;
   height: 10em;
-  margin: 15%;
+  margin: 7%;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -38,7 +38,7 @@ body, main {
   font-family: proxima-nova, sans-serif;
   text-decoration: none;
   color: white;
-  font-size: 1em;
+  font-size: 2em;
 }
 
 a {

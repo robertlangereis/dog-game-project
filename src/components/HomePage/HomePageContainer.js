@@ -14,14 +14,13 @@ class HomePageContainer extends Component {
         <div className='navigation'>
           <h1>Dog Learning APP</h1>
         </div>
-        
+      
         <div>
-
-          <Link to='/dog-list' className='link-home' >
-          <div className='links' id="wiki">Dog Wiki</div>
+          <Link to='/dog-list' className='links'>
+          <div className='link-home'>Dog Wiki</div>
           </Link>
-          
-          <Link to='/dog-game' className='links' id="link-home">
+
+          <Link to='/dog-game' className='links'>
           <div className='link-home'>Dog Game</div>
           </Link>
   
