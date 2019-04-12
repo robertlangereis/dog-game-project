@@ -124,7 +124,7 @@ class DogGame extends Component {
                             <h3 className='button-num'>3</h3>
                         </div>
                     </div>
-                    <div>
+                    <div class="game-footer">
                         <button id="button-hint" onClick={() => {
                             document.getElementById("demo").style.color !== 'black'
                                 ? document.getElementById("demo").style.color = 'black'

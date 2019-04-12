@@ -1,79 +1,78 @@
 /* * {
   border: 0.5px solid black;
 } */
-@media only screen and (min-width: 501px){
-header{
-  height: 7em;
-}
 
-.winner-img{
-  text-align: center;
-}
-
-#winner-img {
-  max-height: 350px;
-  max-width: 500px;
-  border: 2px solid azure;
-  border-radius: 15px;
-}
-
-.answers {
-  display: flex;
-  justify-content: space-around;
-  padding: 2em;
-  max-height: 60px;
-}
-
-.hint {
-  display: flex;
-  justify-content: space-around;
-  height: 3em;
-}
-
-button {
-  color: white;
-  font-weight: bold; 
-  background-color: rgb(45, 90, 150);
-  height: 5em;
-  width: 15em;
-  border-radius: 1em;
-}
-
-h3 {
-  color: white;
-  font-weight: bold; 
-  height: 2em;
-  width: 15em;
-  text-align: center
-}
-
-.answers * {
-  text-transform: uppercase;
-}
-}
-@media only screen and (min-width: 320px) and (max-width : 500px) {  
-  header{
+@media only screen and (min-width: 501px) {
+  header {
     height: 7em;
   }
-  
-  .winner-img{
+  .winner-img {
     text-align: center;
   }
-  
+  #winner-img {
+    max-height: 350px;
+    max-width: 500px;
+    border: 2px solid azure;
+    border-radius: 15px;
+  }
+  .answers {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+    max-height: 60px;
+  }
   .hint {
     display: flex;
     justify-content: space-around;
     height: 3em;
   }
-  
+  button {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(45, 90, 150);
+    height: 5em;
+    width: 15em;
+    border-radius: 1em;
+  }
   h3 {
     color: white;
-    font-weight: bold; 
+    font-weight: bold;
     height: 2em;
     width: 15em;
     text-align: center
   }
-  
+  .answers * {
+    text-transform: uppercase;
+  }
+  .game-footer{
+    display: flex;
+    justify-content: center;
+  }
+  .game-footer * {
+    margin: 0 20px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+  header {
+    height: 7em;
+  }
+  .winner-img {
+    text-align: center;
+  }
+  .hint {
+    display: flex;
+    justify-content: space-around;
+    height: 3em;
+  }
+  h3 {
+    color: white;
+    font-weight: bold;
+    height: 2em;
+    width: 15em;
+    text-align: center
+  }
   .answers * {
     display: block;
     max-width: 90%;
@@ -81,7 +80,6 @@ h3 {
     justify-content: space-around;
     margin: 0 auto;
   }
-  
   #winner-img {
     max-height: 250px;
     max-width: 85%;
@@ -91,37 +89,33 @@ h3 {
   button {
     display: block;
     color: white;
-    font-weight: bold; 
+    font-weight: bold;
     background-color: rgb(45, 90, 150);
     height: 3.5em;
     width: 7em;
     border-radius: 1em;
     margin: 0 auto;
   }
-
   #button-div {
     width: 90%;
     margin: 0 auto;
   }
-
   #button-hint {
     margin: 0 auto;
     color: darkred;
     font-size: 0.8em;
-    font-weight: bold; 
+    font-weight: bold;
     background-color: rgb(black);
     height: 4em;
     width: 10em;
-
-    
   }
   #performance-counter {
     color: black;
-    font-weight: bold; 
-    font-size: 1.5em; 
+    font-weight: bold;
+    font-size: 1.5em;
   }
 }
 
-#demo{
+#demo {
   color: white
 }
