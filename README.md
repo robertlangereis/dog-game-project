@@ -1,4 +1,9 @@
+This React/Redux webapp was made as a team assignment for the Codaisseur Academy, building a basic "game" to improve your knowledge on dogbreeds (using a dogbreed image API). Dev tech used: React, Redux, JS/Node (incl. ES6). We had 4 days to finish this assignment. Team collaborators: Mauro Garcia Esteban, Kevin Zijlmans and Robert Langereis
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Initial Setup
+Use `npm install` to download all required dependencies
 
 ## Available Scripts
 
